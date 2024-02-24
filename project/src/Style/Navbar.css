@@ -20,5 +20,12 @@
 
 .link{
     text-decoration: none;
-    color: black;
+    color: White;
+    font-size: 20px;
+    transition: text-shadow 0.3s ease;
+}
+
+.link:hover {
+    color: #f4543c;
+    transform: scale(1.1); /* Make the button 10% larger on hover */
 }

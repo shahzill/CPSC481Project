@@ -1,21 +1,25 @@
-import React, {useState, useEffect} from "react"; 
-import {BrowserRouter as Router, Switch, Route, Link, useNavigate, useParams} from 'react-router-dom';
+import React from "react";
+import { Link } from 'react-router-dom';
 import Navbar from "../Components/Navbar";
-import "../Style/Navbar.css"
-
+import "../Style/Navbar.css";
+import "../Style/Home.css";
+import videoBG from "../Videos/HomePageVideo.mp4";
 
 function HomePage() {
     return (
         <>
-        <div className="navbar">
+             <video className="Video" src={videoBG} autoPlay muted loop playsInline/> 
+            <div className="navbar">
             <React.Fragment><Navbar /></React.Fragment>
-        </div>
-        <div className="content">
-            <h1>HomePage</h1>
-        </div>
+            </div>
+            <div className="content">
+                <div className="center-buttons">
+                    <Link to="/Menu"><button className="browse-menu-button">Browse Menu</button></Link>
+                    <Link to="/"><button className="about-us-button">About Us</button></Link>
+                </div>
+            </div>
         </>
-    )
-
+    );
 }
 
 export default HomePage;
