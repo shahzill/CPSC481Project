@@ -1,15 +1,17 @@
-import React, {useState, useEffect} from "react"; 
-import {BrowserRouter as Router, Switch, Route, Link, useNavigate, useParams} from 'react-router-dom';
+import React from "react"; 
 import Navbar from "../Components/Navbar";
 import "../Style/Navbar.css"
-import foodItems from "../Data/FoodItems"; 
-
+import "../Style/Menu.css"
+import { foodItems } from "../Data/FoodItems"; 
 
 function MenuPage() {
+    // Find the specific food item
+    const specificFoodItem = foodItems.find(foodItem => foodItem.id === 2) || null; 
 
-    const specificFoodItem = foodItems.find(foodItem => foodItem.id === 2); 
     return (
+        
         <>
+        <div className="black-background">
         <div className="navbar">
             <React.Fragment><Navbar /></React.Fragment>
         </div>
@@ -17,12 +19,14 @@ function MenuPage() {
             <h1>MenuPage</h1>
 
              {specificFoodItem && (
-                <p>Specific Food Item: {specificFoodItem.Name}</p>
+                <div>
+                    <p>Specific Food Item: {specificFoodItem.Name}</p>
+                </div>
             )} 
+        </div>
         </div>
         </>
     )
-
 }
 
 export default MenuPage;
