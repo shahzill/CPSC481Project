@@ -10,7 +10,7 @@ import PaymentPage from './Pages/Payment'
 function App() {
   return (
   <Router> 
-      
+    
     <Routes>
       <Route path='/' element={< HomePage />} />
       <Route path='/Menu' element={< MenuPage />} />
