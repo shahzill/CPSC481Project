@@ -3,8 +3,13 @@ import {BrowserRouter as Router, Switch, Route, Link, useNavigate, useParams} fr
 import Navbar from "../Components/Navbar";
 import "../Style/Navbar.css"
 import "../Style/ItemDetail.css"
+import { foodItems } from "../Data/FoodItems"; 
 
 function ItemDetailPage() {
+
+    let { id } = useParams(); // Access the ID parameter from the URL 
+    const specificFoodItem = foodItems.find(foodItem => foodItem.id === parseInt(id)) || null; 
+
     return (
         <>
         <div className="black-background">
@@ -12,8 +17,16 @@ function ItemDetailPage() {
             <React.Fragment><Navbar /></React.Fragment>
         </div>
         <div className="content">
-            <h1>ItemDetailPage</h1>
-        </div>
+                    {specificFoodItem && (
+                        <>
+                            <h1>{specificFoodItem.Name}</h1>
+                            {/* Display other details of the specific food item */}
+                        </>
+                    )}
+                    {!specificFoodItem && (
+                        <h1>Food item not found</h1>
+                    )}
+                </div>
         </div>
         </>
     )

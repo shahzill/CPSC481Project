@@ -38,9 +38,6 @@ function Navbar() {
 			</nav>
 		</header>
 	);
-	<script>
-		const
-	</script>
 }
 
 export default Navbar;
