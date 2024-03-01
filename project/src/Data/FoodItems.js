@@ -5,7 +5,8 @@ export const foodItems = [
         Course: "Soups", 
         Name: "Tomato Soup", 
         Description: "Classic tomato soup", 
-        Price: "$3.99", 
+        Price: "$3.99",
+        p: 3.99, 
         Ingridients: "Tomatoes, onions, garlic", 
         AddOns: "", 
         Comments: "No croutons" 
@@ -16,6 +17,7 @@ export const foodItems = [
         Name: "Chicken Noodle Soup", 
         Description: "Homemade chicken noodle soup", 
         Price: "$4.50", 
+        p: 4.50,
         Ingridients: "Chicken, noodles, carrots, celery", 
         AddOns: "", 
         Comments: "" 
@@ -26,6 +28,7 @@ export const foodItems = [
         Name: "Minestrone Soup", 
         Description: "Italian vegetable soup", 
         Price: "$4.25", 
+        p: 4.25,
         Ingridients: "Beans, pasta, tomatoes, vegetables", 
         AddOns: "", 
         Comments: "" 
@@ -36,6 +39,7 @@ export const foodItems = [
         Name: "Clam Chowder", 
         Description: "Creamy clam chowder", 
         Price: "$5.25", 
+        p: 5.25,
         Ingridients: "Clams, potatoes, cream", 
         AddOns: "", 
         Comments: "Extra creamy" 
@@ -46,6 +50,7 @@ export const foodItems = [
         Name: "French Onion Soup", 
         Description: "Traditional French onion soup", 
         Price: "$4.75", 
+        p: 4.75,
         Ingridients: "Onions, beef broth, cheese", 
         AddOns: "", 
         Comments: "" 
@@ -56,6 +61,7 @@ export const foodItems = [
         Name: "Vegetable Soup", 
         Description: "Hearty vegetable soup", 
         Price: "$4.25", 
+        p: 4.25,
         Ingridients: "Assorted vegetables, broth", 
         AddOns: "", 
         Comments: "" 
