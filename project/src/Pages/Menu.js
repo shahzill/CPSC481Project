@@ -34,7 +34,7 @@ function MenuPage() {
                 <div className="menu">
                     <div className="courses">
                         <div className="courses-header">
-                            Pick your favourite
+                            Courses
                         </div>
                         <div className="courses-list">
                             <ul>

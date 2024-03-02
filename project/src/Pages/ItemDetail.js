@@ -28,8 +28,8 @@ function ItemDetailPage() {
 
     // increasing and decreasing quantity
 
-    const [quantity, setQuantity] = useState(0);
-    const [price, setPrice] = useState(0);
+    const [quantity, setQuantity] = useState(1);
+    const [price, setPrice] = useState(specificFoodItem.p);
 
     const decrement = () => {
       if (quantity > 0) {
@@ -79,10 +79,10 @@ function ItemDetailPage() {
 
                     {/* Description */}
 
-                    <div class="inner2"> Description: </div>
+                    <div class="inner2"><b> Description </b></div>
                     {specificFoodItem && (
                         <>
-                            <h1>{specificFoodItem.Description}</h1>
+                            <p className="item-description">{specificFoodItem.Description}</p>
                             {/* Display other details of the specific food item */}
                         </>
                     )}
@@ -92,10 +92,10 @@ function ItemDetailPage() {
 
                      {/* Ingredients */}
 
-                     <div class="inner2"> Ingredients: </div>
+                     <div class="inner2"><b> Ingridients </b></div>
                     {specificFoodItem && (
                         <>
-                            <h1>{specificFoodItem.Ingridients}</h1>
+                            <p className="item-description">{specificFoodItem.Ingridients}</p>
                             {/* Display other details of the specific food item */}
                         </>
                     )}
@@ -105,7 +105,7 @@ function ItemDetailPage() {
 
                 </div>
             </div>
-            <div class="column">
+            <div class="column2">
                 {/** Column 2*/}
                 <div className="itemName"> <h1>Customize your order!</h1> </div>
 

@@ -19,7 +19,7 @@
     margin-top: 30px;
 }
 
-.course{
+.courses{
     width: 25%;
 }
 
@@ -40,7 +40,7 @@
     }
 
         .courses-list ul li{
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
 
@@ -53,10 +53,15 @@
     width: 0; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
+.food-items-courses{
+    height: max-content;
+}
+
 .food-items-courses-header{
     width: 100%;
     font-size: 35px;
-    text-decoration: underline;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 .food-items-courses-items{
     display: flex;
@@ -76,3 +81,32 @@
         width: 300px;
     }
 
+
+
+@media (max-width: 1450px) {
+    .menu-item-card{
+        height: 300px;
+        width: 300px;
+        padding: 50px;
+        margin-bottom: 50px;
+    }
+    .menu-item-card img{
+        height: 200px;
+        width: 200px;
+    }
+    .food-items-courses{
+        margin-bottom: 40px;
+    }
+    .courses-header{
+        font-size: 30px;       
+    }
+    .courses-list{
+        padding: 10px;
+        font-size: 20px;
+    }
+    .food-items-courses-header{
+        font-size: 30px;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+}
