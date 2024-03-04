@@ -88,7 +88,7 @@ margin-top: 5px; /* Add some space between icon and description */
     margin-bottom: 40px;
 }
 
-.ConfirmOrderButton {
+.ConfirmOrderButton, .EditOrder {
     padding: 10px 20px;
     font-size: 15px;
     background-color: var(--main-color);
@@ -96,6 +96,18 @@ margin-top: 5px; /* Add some space between icon and description */
     border: none;
     cursor: pointer;
     border-radius: 20px;
+}
+
+.EditOrder{
+    height: 50px;
+    margin-right: 100px;
+}
+
+.Customizations-edit-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Aligns items along the main axis (horizontal) */
+    align-items: center; /* Aligns items along the cross axis (vertical) */
 }
 
 .OrderTotalPrice {

@@ -48,6 +48,15 @@ function MenuPage() {
                                 <li>Drinks</li>
                             </ul>
                         </div>
+                        <div className="key-header">
+                            Key
+                        </div>
+                        <div className="key-list">
+                            <ul>
+                                <li>V = Vegetarian</li>
+                                <li>AF = Alcohol free</li>                               
+                            </ul>
+                        </div>
                     </div>
                     <div className="menu-items">
                         <div className="food-items-courses">
@@ -62,7 +71,10 @@ function MenuPage() {
                                             <div className="menu-item-details">
                                                 <h3>{item.Name}</h3>
                                                 <p>{item.Description}</p>
-                                                <p>Price: ${item.Price}</p>
+                                                <div className="price-key">
+                                                    <p>Price: ${item.Price}</p>
+                                                    <p>{item.Key}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </Link>                           

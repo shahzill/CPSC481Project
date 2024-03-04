@@ -125,18 +125,27 @@ function OrderPage() {
                                             <span className="quantity-of-item">Quantity: {order.ItemTotalQuantity}</span>
                                         </div>
                                     )}
-                                    {order.ItemName && ( // Check if ItemName is not empty
-                                        <React.Fragment>
-                                            <div className="Customizations-header">Customizations:</div> 
-                                            <div className="Customizations-items">{order.ItemCustomizations}</div>
-                                        </React.Fragment>
-                                    )}
+                                    
+                                    <div className="Customizations-edit-button">                                       
+                                        {order.ItemName && ( // Check if ItemName is not empty
+                                            <React.Fragment>
+                                                <div>
+                                                    <div className="Customizations-header">Customizations:</div> 
+                                                    <div className="Customizations-items">{order.ItemCustomizations}</div>
+                                                </div>
+                                            </React.Fragment>
+                                        )}
+                                        {orderArray[0].OrderStatus === "Order has not been placed yet" && order.ItemName && (
+                                            <button className="EditOrder" onClick={() => ConfirmOrder(orderArray)}>Edit</button>
+                                        )}
+                                    </div>
                                     {order.ItemComments && (
                                         <React.Fragment>
                                             <div className="Comments-header">Comments:</div> 
                                             <div className="Comments-items">{order.ItemComments}</div>
                                         </React.Fragment>
                                     )}
+                                    
                                 </div>                                                            
                             ))}
                             <div className="OrderAndPrice">

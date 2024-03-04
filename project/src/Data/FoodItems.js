@@ -9,7 +9,7 @@ export const foodItems = [
         p: 3.99, 
         Ingridients: "Tomatoes, onions, garlic", 
         AddOns: "", 
-        Comments: "No croutons" 
+        Key: "V, AF" 
     },
     { 
         id: 2, 
@@ -20,7 +20,7 @@ export const foodItems = [
         p: 4.50,
         Ingridients: "Chicken, noodles, carrots, celery", 
         AddOns: "", 
-        Comments: "" 
+        Key: "AF" 
     },
     { 
         id: 3, 
@@ -31,7 +31,7 @@ export const foodItems = [
         p: 4.25,
         Ingridients: "Beans, pasta, tomatoes, vegetables", 
         AddOns: "", 
-        Comments: "" 
+        Key: "V" 
     },
     { 
         id: 4, 
@@ -42,7 +42,7 @@ export const foodItems = [
         p: 5.25,
         Ingridients: "Clams, potatoes, cream", 
         AddOns: "", 
-        Comments: "Extra creamy" 
+        Key: "AF" 
     },
     { 
         id: 5, 
@@ -53,7 +53,7 @@ export const foodItems = [
         p: 4.75,
         Ingridients: "Onions, beef broth, cheese", 
         AddOns: "", 
-        Comments: "" 
+        Key: "V, AF" 
     },
     { 
         id: 6, 
@@ -64,7 +64,7 @@ export const foodItems = [
         p: 4.25,
         Ingridients: "Assorted vegetables, broth", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     // Appetizers
     { 
@@ -75,7 +75,7 @@ export const foodItems = [
         Price: "$6.99", 
         Ingridients: "Mozzarella cheese, breadcrumbs", 
         AddOns: "Marinara sauce", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 8, 
@@ -85,7 +85,7 @@ export const foodItems = [
         Price: "$8.50", 
         Ingridients: "Chicken wings, hot sauce", 
         AddOns: "Ranch dressing", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 9, 
@@ -95,7 +95,7 @@ export const foodItems = [
         Price: "$7.25", 
         Ingridients: "Tortilla chips, cheese, salsa, guacamole", 
         AddOns: "Sour cream, jalapenos", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 10, 
@@ -105,7 +105,7 @@ export const foodItems = [
         Price: "$5.99", 
         Ingridients: "Baguette, tomatoes, garlic, basil", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 11, 
@@ -115,7 +115,7 @@ export const foodItems = [
         Price: "$7.75", 
         Ingridients: "Spinach, artichokes, cream cheese", 
         AddOns: "Tortilla chips", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 12, 
@@ -125,7 +125,7 @@ export const foodItems = [
         Price: "$8.25", 
         Ingridients: "Mushrooms, cheese, breadcrumbs", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 13, 
@@ -135,7 +135,7 @@ export const foodItems = [
         Price: "$8.99", 
         Ingridients: "Romaine lettuce, croutons, Parmesan cheese", 
         AddOns: "Grilled chicken", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 14, 
@@ -145,7 +145,7 @@ export const foodItems = [
         Price: "$7.50", 
         Ingridients: "Tomatoes, cucumbers, olives, feta cheese", 
         AddOns: "Grilled shrimp", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 15, 
@@ -155,7 +155,7 @@ export const foodItems = [
         Price: "$9.25", 
         Ingridients: "Tomatoes, mozzarella cheese, basil", 
         AddOns: "Balsamic glaze", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 16, 
@@ -165,7 +165,7 @@ export const foodItems = [
         Price: "$10.50", 
         Ingridients: "Mixed greens, avocado, bacon, blue cheese", 
         AddOns: "Grilled chicken", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 17, 
@@ -175,7 +175,7 @@ export const foodItems = [
         Price: "$8.75", 
         Ingridients: "Spinach, strawberries, almonds, feta cheese", 
         AddOns: "Grilled salmon", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 18, 
@@ -185,7 +185,7 @@ export const foodItems = [
         Price: "$7.99", 
         Ingridients: "Apples, grapes, walnuts, celery", 
         AddOns: "Grilled chicken", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 19, 
@@ -195,7 +195,7 @@ export const foodItems = [
         Price: "$14.99", 
         Ingridients: "Salmon fillet, lemon, butter", 
         AddOns: "Steamed vegetables", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 20, 
@@ -205,7 +205,7 @@ export const foodItems = [
         Price: "$12.50", 
         Ingridients: "Cod fillets, batter, potatoes", 
         AddOns: "Tartar sauce, malt vinegar", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 21, 
@@ -215,7 +215,7 @@ export const foodItems = [
         Price: "$13.75", 
         Ingridients: "Shrimp, garlic, butter, white wine", 
         AddOns: "Pasta, breadsticks", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 22, 
@@ -225,7 +225,7 @@ export const foodItems = [
         Price: "$16.50", 
         Ingridients: "Swordfish steak, lemon, herbs", 
         AddOns: "Roasted potatoes, asparagus", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 23, 
@@ -235,7 +235,7 @@ export const foodItems = [
         Price: "$22.99", 
         Ingridients: "Lobster tail, butter", 
         AddOns: "Drawn butter, lemon", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 24, 
@@ -245,7 +245,7 @@ export const foodItems = [
         Price: "$15.75", 
         Ingridients: "Crab meat, breadcrumbs, spices", 
         AddOns: "Remoulade sauce", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 25, 
@@ -255,7 +255,7 @@ export const foodItems = [
         Price: "$29.99", 
         Ingridients: "Beef tenderloin, seasoning", 
         AddOns: "Mashed potatoes, green beans", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 26, 
@@ -265,7 +265,7 @@ export const foodItems = [
         Price: "$32.50", 
         Ingridients: "Arborio rice, lobster meat, Parmesan cheese", 
         AddOns: "Asparagus spears", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 27, 
@@ -275,7 +275,7 @@ export const foodItems = [
         Price: "$24.99", 
         Ingridients: "Mushrooms, spinach, puff pastry", 
         AddOns: "Roasted vegetables", 
-        Comments: "" 
+        Key: "" 
     },
     // Add more main courses
     // Palate cleansers
@@ -287,7 +287,7 @@ export const foodItems = [
         Price: "$6.50", 
         Ingridients: "Lemon juice, sugar", 
         AddOns: "Fresh mint", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 29, 
@@ -297,7 +297,7 @@ export const foodItems = [
         Price: "$7.25", 
         Ingridients: "Cucumber, mint, sugar", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 30, 
@@ -307,7 +307,7 @@ export const foodItems = [
         Price: "$6.99", 
         Ingridients: "Blood orange juice, sugar", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     // Desserts
     { 
@@ -318,7 +318,7 @@ export const foodItems = [
         Price: "$8.99", 
         Ingridients: "Egg yolks, cream, vanilla bean", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 32, 
@@ -328,7 +328,7 @@ export const foodItems = [
         Price: "$10.50", 
         Ingridients: "Ladyfingers, coffee, mascarpone cheese", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 33, 
@@ -338,7 +338,7 @@ export const foodItems = [
         Price: "$11.75", 
         Ingridients: "Chocolate, cream, butter", 
         AddOns: "Whipped cream", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 34, 
@@ -348,7 +348,7 @@ export const foodItems = [
         Price: "$9.25", 
         Ingridients: "Key lime juice, condensed milk", 
         AddOns: "Whipped cream", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 35, 
@@ -358,7 +358,7 @@ export const foodItems = [
         Price: "$10.99", 
         Ingridients: "Apples, pastry dough", 
         AddOns: "Vanilla ice cream", 
-        Comments: "" 
+        Key: "" 
     },
     // Drinks
     { 
@@ -369,7 +369,7 @@ export const foodItems = [
         Price: "$12.99 (per glass)", 
         Ingridients: "", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 37, 
@@ -379,7 +379,7 @@ export const foodItems = [
         Price: "$10.99 (per glass)", 
         Ingridients: "", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 38, 
@@ -389,7 +389,7 @@ export const foodItems = [
         Price: "$14.50", 
         Ingridients: "Bourbon, sugar, bitters", 
         AddOns: "Orange twist, cherry", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 39, 
@@ -399,7 +399,7 @@ export const foodItems = [
         Price: "$13.75", 
         Ingridients: "Gin, vermouth, Campari", 
         AddOns: "Orange twist", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 40, 
@@ -409,7 +409,7 @@ export const foodItems = [
         Price: "$11.99", 
         Ingridients: "Rum, mint leaves, lime, soda water", 
         AddOns: "", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 41, 
@@ -419,7 +419,7 @@ export const foodItems = [
         Price: "$12.25", 
         Ingridients: "Vodka, cranberry juice, lime, triple sec", 
         AddOns: "Lime twist", 
-        Comments: "" 
+        Key: "" 
     },
     { 
         id: 42, 
@@ -429,7 +429,7 @@ export const foodItems = [
         Price: "$4.50", 
         Ingridients: "", 
         AddOns: "Lemon wedge", 
-        Comments: "" 
+        Key: "" 
     },
 ];
 

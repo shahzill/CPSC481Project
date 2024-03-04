@@ -6,6 +6,7 @@
 
 .contentMenuPage{
     padding: 10px;
+    height: 90vh;
 }
 
 .search-bar{
@@ -18,9 +19,26 @@
     flex-direction: row;
     margin-top: 30px;
 }
-
+.price-key{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .courses{
     width: 25%;
+}
+
+.key-header{
+    font-size: 30px;
+    margin-left: 20px;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.key-list{
+    font-size: 20px;
+    margin-left: 40px;
+    padding: 20px;
 }
 
 .courses-header{

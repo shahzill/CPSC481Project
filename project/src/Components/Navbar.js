@@ -26,7 +26,7 @@ function Navbar() {
 
 	return (
 		<header className="header">
-			<Link className="imageLink" smooth to="/#" ></Link>
+			<Link className="link" smooth to="/#" >Culinary Canvas</Link>
 			<nav ref={navRef}>
                 <div className="links">
                     <Link className="link" smooth to="/" >Home</Link>
@@ -36,6 +36,7 @@ function Navbar() {
                     <Link className="link" smooth to="" >About us</Link>
                 </div>
 			</nav>
+			<button className="CallForAssistance" >Call for assistance</button>
 		</header>
 	);
 }
