@@ -17,10 +17,9 @@ function OrderPage() {
     const [order2Total, setOrder2Total] = useState();
     const [order3Total, setOrder3Total] = useState();
     const [order4Total, setOrder4Total] = useState();
-    const [order5Total, setOrder5Total] = useState();
-
-
-    
+    const [order5Total, setOrder5Total] = useState(0);
+    const [TotalOrderPrice, setTotalOrderPrice] = useState();
+   
      useEffect(() => {
         const orderArrays = [Order1, Order2, Order3, Order4, Order5];
         let foundOrder = false;
@@ -32,6 +31,7 @@ function OrderPage() {
             setOrder4Total,
             setOrder5Total
         ];
+        let TotalPriceCalc = 0;
 
         for (let i = 0; i < orderArrays.length; i++) {
             let totalOrderPrice = 0;
@@ -44,11 +44,11 @@ function OrderPage() {
                     // Calculate total price for valid items
                     validItems.forEach(order => {
                         totalOrderPrice += parseFloat(order.ItemPrice);
+                        TotalPriceCalc += parseFloat(order.ItemPrice);
                     });
-            
+
                     // Set total order price using the appropriate state setter from orderTotalSetters array
                     orderTotalSetters[i](totalOrderPrice.toFixed(2));
-                    console.log("total order price for ",i,totalOrderPrice)
 
             if (orderNotPlaced.OrderStatus === "Order has not been placed yet" && foundOrder == false) {
                 foundOrder = true;
@@ -60,8 +60,20 @@ function OrderPage() {
             }
         }
         setOrders(newOrders)
+        setTotalOrderPrice(TotalPriceCalc.toFixed(2))
     }, []);  // Empty dependency array ensures it runs only once 
 
+    const ConfirmOrder = (orderArray) => {
+        const orderNumber = orderArray[0].OrderNumber;
+        const orderToUpdate = orders.find(order => order[0].OrderNumber === orderNumber);
+        if (orderToUpdate) {
+            orderToUpdate.forEach(order => {
+                order.OrderStatus = "Order has been placed";
+                order.OrderStatusTotal += " Order has been placed";
+            });
+        }
+        setOrders([...orders]);
+    };
 
     return (
         <>
@@ -101,11 +113,10 @@ function OrderPage() {
                         ))}
                     </div>
                 </div>
-                 <div className="OrderSummarySide">
-                 {orders.map((orderArray, index) => (
+                <div className="OrderSummarySide">
+                {orders.map((orderArray, index) => (
                     <div key={orderArray[0].id}>
                         <p className="OrderNumber">Order {orderArray[0].OrderNumber}</p>                      
-                        <ul>
                             {orderArray.map(order => (
                                 <div className="FoodItemSummary" key={order.id}>
                                     {order.ItemName && ( // Check if ItemName is not empty
@@ -126,12 +137,18 @@ function OrderPage() {
                                             <div className="Comments-items">{order.ItemComments}</div>
                                         </React.Fragment>
                                     )}
-                                </div>                                 
+                                </div>                                                            
                             ))}
-                        </ul>
-                        <p className="OrderNumber">Total: {eval(`order${index + 1}Total`)}</p> {/* Accessing order total dynamically */}
+                            <div className="OrderAndPrice">
+                                {orderArray[0].OrderStatus === "Order has not been placed yet" && (
+                                    <button className="ConfirmOrderButton" onClick={() => ConfirmOrder(orderArray)}>Confirm Order</button>
+                                )}                              
+                                <div className="OrderTotalPrice">Total: {eval(`order${index + 1}Total`)}</div> {/* Accessing order total dynamically */}
+                            </div>  
                     </div>
+                                    
                 ))}
+                <div className="OrderTotalPrice">Overall total: {TotalOrderPrice}</div>
                 </div> 
             </div>
         </div>
@@ -142,67 +159,3 @@ function OrderPage() {
 
 export default OrderPage;
 
-
-{/* <ul>
-                {orders.map(orderArray => (
-                    <div key={orderArray[0].id}>
-                        <h3>Order {orderArray[0].OrderNumber} status: {orderArray[0].OrderStatus}</h3>
-                        <h4>Entity Name: {orderArray[0].EntityName}</h4> 
-                        <ul>
-                            {orderArray.map(order => (
-                                <li key={order.id}>
-                                    <strong>Item Name:</strong> {order.ItemName}<br />
-                                   
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </ul> */}
-
-            {/*  <div className="OrderSymbols" style={{ color: '#7acda6' }}>
-                        <div className="iconWithDescription">
-                            <FontAwesomeIcon icon={faPaperPlane} />
-                            <div className="description">Order placed</div>
-                        </div>
-                        <div className="iconWithDescription">
-                            <FontAwesomeIcon icon={faClipboardCheck} />
-                            <div className="description">Order confirmed</div>
-                        </div>
-                        <div className="iconWithDescription">
-                            <FontAwesomeIcon icon={faBowlRice} />
-                            <div className="description">Preparing</div>
-                        </div>
-                        <div className="iconWithDescription">
-                            <FontAwesomeIcon icon={faUtensils} />
-                            <div className="description">Serving</div>
-                        </div>
-                        </div> */}
-                        
-                    
-
-
-
-                    {/* <div className="Order">
-                        <p className="OrderHeader" >
-                            <b>Order  status:</b> Order has not been placed yet
-                        </p>
-                        <div className="OrderSymbols" style={{ color: '#d9534f' }}>
-                        <div className="iconWithDescription">
-                            <FontAwesomeIcon icon={faPaperPlane} />
-                            <div className="description">Order placed</div>
-                        </div>
-                        <div className="iconWithDescription">
-                            <FontAwesomeIcon icon={faClipboardCheck} />
-                            <div className="description">Order confirmed</div>
-                        </div>
-                        <div className="iconWithDescription">
-                            <FontAwesomeIcon icon={faBowlRice} />
-                            <div className="description">Preparing</div>
-                        </div>
-                        <div className="iconWithDescription">
-                            <FontAwesomeIcon icon={faUtensils} />
-                            <div className="description">Serving</div>
-                        </div>
-                        </div>
-                    </div> */}

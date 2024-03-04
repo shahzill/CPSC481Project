@@ -1,6 +1,7 @@
 .contentOrderPage{
     display: flex;
     flex-direction: row;
+    height: 90vh;
 }
 
 .OrderStatusSide{
@@ -32,14 +33,27 @@ margin-top: 5px; /* Add some space between icon and description */
 .OrderSummarySide{
     width: 55%;
     padding: 20px;
+    overflow-y: scroll;
+    padding-top: 50px;
+}
+
+.OrderSummarySide::-webkit-scrollbar {
+    width: 0; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 .OrderNumber{
     font-size: 30px;
 }
 
+.OrderTotalPrice{
+    padding-right: 130px;
+    text-align: right;
+    font-size: 25px;
+}
+
 .FoodItemSummary{
     padding: 10px 20px;
+    padding-bottom: 0px;
 }
 
 .ItemNameSummary-header{
@@ -52,10 +66,40 @@ margin-top: 5px; /* Add some space between icon and description */
 
 .Customizations-header, .Comments-header {
     padding: 10px 20px;
-    font-size: 25px;
+    font-size: 25px;  
 }
 
 .Customizations-items, .Comments-items{
     padding: 0px 40px;
     font-size: 20px;
 }
+
+.OrderAndPrice {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 40px;
+}
+
+.OrderAndPrice {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 40px;
+}
+
+.ConfirmOrderButton {
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: var(--main-color);
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.OrderTotalPrice {
+    margin-left: auto; /* Push "Total" text to the right */
+}
+
+
