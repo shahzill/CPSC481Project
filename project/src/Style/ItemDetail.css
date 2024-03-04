@@ -40,7 +40,7 @@
   align-items: center; /* Vertically centers the content */
   font-size: 25px;
   padding: 4px;
-  color: #f4543c;
+  color: var(--main-color);
   text-align: center;
 }
 .inner {
@@ -54,30 +54,31 @@
   font-size: 30px;
   padding-top: 4px;
   padding-bottom: 2px;
-  color: #f4543c;
+  color: var(--main-color);
   text-align: center;
 }
 
 .inner3 {
   font-family: "Titillium Web", sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   padding-top: 4px;
   padding-bottom: 2px;
+  color: var(--main-color);
 }
 
 .inner4 {
   font-family: "Titillium Web", sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   padding-top: 4px;
   padding-bottom: 6px;
+  color: var(--main-color);
 }
 
 .inner6 {
   font-family: "Titillium Web", sans-serif;
   font-size: 35px;
-  padding-top: 4px;
-  padding-bottom: 2px;
   margin-left: 10px;
+  color: var(--main-color);
 }
 
 .column img {
@@ -90,6 +91,14 @@
   margin: 0 auto; /* Horizontally center the image within its container */
 }
 
+.addon-content{
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.addon{
+  padding-left: 40px;
+}
 .container2 {
   width: 100%;
   margin: 0 auto;
@@ -100,7 +109,7 @@
 }
 
 .comment-box {
-  margin-bottom: 0px;
+  margin-top: 20px;
 }
 
 .quantity {
@@ -128,14 +137,15 @@
   margin-left: 2px;
   padding: 10px 20px;
   font-size: 30px;
-  background-color: orangered;
+  background-color: var(--main-color);
   color: #000000;
   border: none;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .add-to-order:hover {
-  background-color:rgb(254, 108, 55);
+  background-color:var(--main-color);
 }
 
 .addon {
@@ -143,9 +153,20 @@
   align-items: center; /* Align items vertically */
 }
 
+.quantity-price {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  flex-direction: row;
+}
+
 .bigger-checkbox {
   transform: scale(2); /* Increase the size of the checkbox */
   margin-right: 5px; /* Optional: Adjust spacing */
+}
+
+.add-go-to-order-buttons{
+  display: flex;
+  flex-direction: row;
 }
 
 
@@ -170,23 +191,31 @@ textarea::placeholder {
 
 .buttonq {
   font-family: "Titillium Web", sans-serif;
-  background-color: rgb(66, 66, 66);
+  background-color: transparent;
   color: white;
   border-style: solid;
-  border-radius: 100px;
+  border-radius: 100%;
   margin: 7px;
-  font-size: 45px; /* Increase the font size of the button */
-  padding: 10px 20px;
+  font-size: 35px;
+  width: 60px; /* Set width and height to ensure the button is perfectly square */
+  height: 60px;
+  padding: 0; /* Remove padding to maintain square shape */
+  border-width: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonq:hover {
-  background-color: #5c5b5b; /* Change background color to gray when hovered */
+  background-color: var(--main-color);
+  border-width: 8px;
 }
 
 
 
 .totalq {
-  font-size: 45px;
+  font-size: 35px;
+  padding: 20px;
 }
 
 .pricey {
@@ -202,18 +231,18 @@ textarea::placeholder {
   font-family: "Titillium Web", sans-serif;
 }
 .go-to-order {
-  margin-top: 50px;
-  margin-left: 2px;
+  margin-left: 20px;
   padding: 10px 20px;
   font-size: 30px;
-  background-color: gold;
+  background-color: var(--main-color);
   color: #000000;
   border: none;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .go-to-order:hover{
-  background-color: rgb(249, 220, 52);
+  background-color: var(--main-color);
 }
 
 
@@ -236,7 +265,7 @@ textarea::placeholder {
     font-size: 25px;
     padding-top: 4px;
     padding-bottom: 2px;
-    color: #f4543c;
+    color: var(--main-color);
     text-align: center;
   }
 

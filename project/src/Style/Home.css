@@ -1,3 +1,7 @@
+:root {
+    --main-color: #f4543c; /* Define a variable named --main-color and assign it a value */
+  }
+
 .navbar{
     width: 100%;
 }
@@ -38,12 +42,12 @@
 }
 
 .browse-menu-button {
-    background-color: #f4543c; /* Blue */
+    background-color: var(--main-color); 
     color: white;
 }
 
 .about-us-button {
-    background-color: #f4543c; /* Green */
+    background-color: var(--main-color);
     color: white;
 }
 

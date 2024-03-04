@@ -12,7 +12,7 @@ function HomePage() {
             <div className="navbar">
             <React.Fragment><Navbar /></React.Fragment>
             </div>
-            <div className="content">
+            <div className="contentHome">
                 <div className="center-buttons">
                     <Link to="/Menu"><button className="browse-menu-button">Browse Menu</button></Link>
                     <Link to="/"><button className="about-us-button">About Us</button></Link>

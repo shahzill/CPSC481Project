@@ -26,7 +26,7 @@ function MenuPage() {
             <div className="navbar">
                 <React.Fragment><Navbar /></React.Fragment>
             </div>
-            <div className="content">
+            <div className="contentMenuPage">
                 <div className="search-bar">
                         Search menu:&nbsp;&nbsp;
                     <input type="text" placeholder="Search..." />
