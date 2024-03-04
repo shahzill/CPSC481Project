@@ -8,7 +8,7 @@ export const Order1 = [
         ItemCustomizations: "Fish crackers, Extra meat", 
         ItemTotalQuantity: "2", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 9.99
     },
     { 
         id: 2, 
@@ -19,7 +19,7 @@ export const Order1 = [
         ItemCustomizations: "Lemon Herb Couscous, Fries", 
         ItemTotalQuantity: "2", 
         ItemComments: "Can I have my fries extra crispy?",
-        ItemPrice: ""
+        ItemPrice: 10.00
     },
     { 
         id: 3, 
@@ -30,7 +30,7 @@ export const Order1 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 0
     },
     { 
         id: 4,
@@ -41,7 +41,7 @@ export const Order1 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 0
     },
     { 
         id: 5,
@@ -52,7 +52,7 @@ export const Order1 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 0
     }
 ]
 
@@ -62,11 +62,11 @@ export const Order2 = [
         OrderNumber: 2,
         OrderStatus: "Order has been confirmed",
         OrderStatusTotal: "Order has been placed Order has been confirmed", 
-        ItemName: "", 
-        ItemCustomizations: "", 
-        ItemTotalQuantity: "", 
+        ItemName: "Filet Mignon", 
+        ItemCustomizations: "Mashed potatoes", 
+        ItemTotalQuantity: "1", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 6.99
     },
     { 
         id: 2, 
@@ -77,7 +77,7 @@ export const Order2 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 0
     },
     { 
         id: 3, 
@@ -88,7 +88,7 @@ export const Order2 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 0
     },
     { 
         id: 4,
@@ -99,7 +99,7 @@ export const Order2 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 0
     },
     { 
         id: 5,
@@ -110,7 +110,7 @@ export const Order2 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 0
     }
 ]
 
@@ -123,7 +123,7 @@ export const Order3 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: ""
+        ItemPrice: 0
     },
     { 
         id: 2, 

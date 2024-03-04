@@ -13,21 +13,46 @@ import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
 function OrderPage() {
 
     const [orders, setOrders] = useState([]);
+    const [order1Total, setOrder1Total] = useState();
+    const [order2Total, setOrder2Total] = useState();
+    const [order3Total, setOrder3Total] = useState();
+    const [order4Total, setOrder4Total] = useState();
+    const [order5Total, setOrder5Total] = useState();
+
 
     
-    useEffect(() => {
+     useEffect(() => {
         const orderArrays = [Order1, Order2, Order3, Order4, Order5];
         let foundOrder = false;
         const newOrders = [];
+        const orderTotalSetters = [
+            setOrder1Total,
+            setOrder2Total,
+            setOrder3Total,
+            setOrder4Total,
+            setOrder5Total
+        ];
 
         for (let i = 0; i < orderArrays.length; i++) {
+            let totalOrderPrice = 0;
             const orderArray = orderArrays[i];
             const orderNotPlaced = orderArray.find(order => order.id === 1);
             newOrders.push(orderArray);
-            console.log("outside for loop",foundOrder,orderNotPlaced);
+
+            const validItems = orderArray.filter(order => order.ItemName !== "");
+                    
+                    // Calculate total price for valid items
+                    validItems.forEach(order => {
+                        totalOrderPrice += parseFloat(order.ItemPrice);
+                    });
+            
+                    // Set total order price using the appropriate state setter from orderTotalSetters array
+                    orderTotalSetters[i](totalOrderPrice.toFixed(2));
+                    console.log("total order price for ",i,totalOrderPrice)
+
             if (orderNotPlaced.OrderStatus === "Order has not been placed yet" && foundOrder == false) {
                 foundOrder = true;
-                console.log("inside for loop ",i,newOrders);
+                
                 if(orderNotPlaced.ItemName === ""){
                     newOrders.pop(orderArray)
                 }
@@ -35,7 +60,8 @@ function OrderPage() {
             }
         }
         setOrders(newOrders)
-    }, []);  // Empty dependency array ensures it runs only once
+    }, []);  // Empty dependency array ensures it runs only once 
+
 
     return (
         <>
@@ -47,7 +73,6 @@ function OrderPage() {
                 <div className="OrderStatusSide">
                     <div className="Order">
                         {orders.map(orderArray => (
-                            
                             <div key={orderArray[0].id}>
                                 <div className="Order">
                                     <p className="OrderHeader" >
@@ -77,7 +102,7 @@ function OrderPage() {
                     </div>
                 </div>
                  <div className="OrderSummarySide">
-                {orders.map(orderArray => (
+                 {orders.map((orderArray, index) => (
                     <div key={orderArray[0].id}>
                         <p className="OrderNumber">Order {orderArray[0].OrderNumber}</p>                      
                         <ul>
@@ -104,6 +129,7 @@ function OrderPage() {
                                 </div>                                 
                             ))}
                         </ul>
+                        <p className="OrderNumber">Total: {eval(`order${index + 1}Total`)}</p> {/* Accessing order total dynamically */}
                     </div>
                 ))}
                 </div> 
