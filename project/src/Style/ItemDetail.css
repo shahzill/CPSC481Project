@@ -137,15 +137,15 @@
   margin-left: 2px;
   padding: 10px 20px;
   font-size: 30px;
-  background-color: var(--main-color);
-  color: #000000;
+  background-color: var(--button-color);
+  color: white;
   border: none;
   cursor: pointer;
   border-radius: 20px;
 }
 
 .add-to-order:hover {
-  background-color:var(--main-color);
+  background-color:var(--button-color);
 }
 
 .addon {
@@ -232,15 +232,15 @@ textarea::placeholder {
   margin-left: 20px;
   padding: 10px 20px;
   font-size: 30px;
-  background-color: var(--main-color);
-  color: #000000;
+  background-color: var(--button-color);
+  color: white;
   border: none;
   cursor: pointer;
   border-radius: 20px;
 }
 
 .go-to-order:hover{
-  background-color: var(--main-color);
+  background-color: var(--button-color);
 }
 
 

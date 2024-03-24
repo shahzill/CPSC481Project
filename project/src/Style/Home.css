@@ -1,5 +1,6 @@
 :root {
-    --main-color: #f4543c; /* Define a variable named --main-color and assign it a value */
+    --main-color: #f4543c;
+    --button-color: #006d77; 
   }
 
 .navbar{
@@ -42,12 +43,12 @@
 }
 
 .browse-menu-button {
-    background-color: var(--main-color); 
+    background-color: var(--button-color); 
     color: white;
 }
 
 .about-us-button {
-    background-color: var(--main-color);
+    background-color: var(--button-color);
     color: white;
 }
 
