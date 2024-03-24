@@ -8,7 +8,8 @@ export const Order1 = [
         ItemCustomizations: "Fish crackers, Extra meat", 
         ItemTotalQuantity: "2", 
         ItemComments: "",
-        ItemPrice: 9.99
+        ItemPrice: 9.99,
+        ItemTotalPrice: 19.98
     },
     { 
         id: 2, 
@@ -19,7 +20,8 @@ export const Order1 = [
         ItemCustomizations: "Lemon Herb Couscous, Fries", 
         ItemTotalQuantity: "2", 
         ItemComments: "Can I have my fries extra crispy?",
-        ItemPrice: 10.00
+        ItemPrice: 10.99,
+        ItemTotalPrice: 21.98
     },
     { 
         id: 3, 
@@ -30,7 +32,8 @@ export const Order1 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 4,
@@ -41,7 +44,8 @@ export const Order1 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 5,
@@ -52,7 +56,8 @@ export const Order1 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     }
 ]
 
@@ -66,7 +71,8 @@ export const Order2 = [
         ItemCustomizations: "Mashed potatoes", 
         ItemTotalQuantity: "1", 
         ItemComments: "",
-        ItemPrice: 6.99
+        ItemPrice: 6.99,
+        ItemTotalPrice: 6.99
     },
     { 
         id: 2, 
@@ -77,7 +83,8 @@ export const Order2 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 3, 
@@ -88,7 +95,8 @@ export const Order2 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 4,
@@ -99,7 +107,8 @@ export const Order2 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 5,
@@ -110,7 +119,8 @@ export const Order2 = [
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     }
 ]
 
@@ -119,51 +129,61 @@ export const Order3 = [
         id: 1, 
         OrderNumber: 3,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 2, 
         OrderNumber: 3,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 3, 
         OrderNumber: 3,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 4,
         OrderNumber: 3,
         OrderStatus: "Order has not been placed yet", 
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 5,
         OrderNumber: 3,
         OrderStatus: "Order has not been placed yet", 
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     }
 ]
 
@@ -172,51 +192,61 @@ export const Order4 = [
         id: 1, 
         OrderNumber: 4,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 2, 
         OrderNumber: 4,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 3, 
         OrderNumber: 4,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 4,
         OrderNumber: 4,
         OrderStatus: "Order has not been placed yet", 
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 5,
         OrderNumber: 4,
         OrderStatus: "Order has not been placed yet", 
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     }
 ]
 
@@ -225,50 +255,60 @@ export const Order5 = [
         id: 1, 
         OrderNumber: 5,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 2, 
         OrderNumber: 5,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 3, 
         OrderNumber: 5,
         OrderStatus: "Order has not been placed yet",
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 4,
         OrderNumber: 5,
         OrderStatus: "Order has not been placed yet", 
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     },
     { 
         id: 5,
         OrderNumber: 5,
         OrderStatus: "Order has not been placed yet", 
+        OrderStatusTotal: "Order has not been placed yet", 
         ItemName: "", 
         ItemCustomizations: "", 
         ItemTotalQuantity: "", 
         ItemComments: "",
-        ItemPrice: 0.00
+        ItemPrice: 0.00,
+        ItemTotalPrice: 0.00
     }
 ]

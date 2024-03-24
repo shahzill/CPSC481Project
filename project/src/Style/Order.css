@@ -62,6 +62,49 @@ margin-top: 5px; /* Add some space between icon and description */
     display: flex;
     justify-content: space-between;
     padding-right: 100px;
+    align-items: center;
+}
+.price-of-item{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 100px;
+    font-size: 25px;
+    color: var(--main-color);
+}
+.button-quantity-change {
+    font-family: "Titillium Web", sans-serif;
+    background-color: transparent;
+    color: white;
+    border-style: solid;
+    border-radius: 100%;
+    margin: 7px;
+    font-size: 35px;
+    width: 30px; /* Set width and height to ensure the button is perfectly square */
+    height: 30px;
+    padding: 10px; /* Remove padding to maintain square shape */
+    border-width: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-quantity-change{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px; /* Set width and height to ensure the button is perfectly square */
+    height: 25px;
+    margin: 12px;
+    color: white;
+}
+
+
+.total-quantity {
+    font-size: 30px;
+}
+.quantity-controls-order-page {
+    display: flex;
 }
 
 .Customizations-header, .Comments-header {

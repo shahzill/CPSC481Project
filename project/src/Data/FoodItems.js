@@ -5,8 +5,7 @@ export const foodItems = [
         Course: "Soups", 
         Name: "Tomato Soup", 
         Description: "Classic tomato soup", 
-        Price: "$3.99",
-        p: 3.99, 
+        Price: 3.99, 
         Ingridients: "Tomatoes, onions, garlic", 
         AddOns: "", 
         Key: "V, AF" 
@@ -16,8 +15,7 @@ export const foodItems = [
         Course: "Soups", 
         Name: "Chicken Noodle Soup", 
         Description: "Homemade chicken noodle soup", 
-        Price: "$4.50", 
-        p: 4.50,
+        Price: 4.50,
         Ingridients: "Chicken, noodles, carrots, celery", 
         AddOns: "", 
         Key: "AF" 
@@ -27,8 +25,7 @@ export const foodItems = [
         Course: "Soups", 
         Name: "Minestrone Soup", 
         Description: "Italian vegetable soup", 
-        Price: "$4.25", 
-        p: 4.25,
+        Price: 4.25,
         Ingridients: "Beans, pasta, tomatoes, vegetables", 
         AddOns: "", 
         Key: "V" 
@@ -38,8 +35,7 @@ export const foodItems = [
         Course: "Soups", 
         Name: "Clam Chowder", 
         Description: "Creamy clam chowder", 
-        Price: "$5.25", 
-        p: 5.25,
+        Price: 5.25,
         Ingridients: "Clams, potatoes, cream", 
         AddOns: "", 
         Key: "AF" 
@@ -49,8 +45,7 @@ export const foodItems = [
         Course: "Soups", 
         Name: "French Onion Soup", 
         Description: "Traditional French onion soup", 
-        Price: "$4.75", 
-        p: 4.75,
+        Price: 4.75,
         Ingridients: "Onions, beef broth, cheese", 
         AddOns: "", 
         Key: "V, AF" 
@@ -60,8 +55,7 @@ export const foodItems = [
         Course: "Soups", 
         Name: "Vegetable Soup", 
         Description: "Hearty vegetable soup", 
-        Price: "$4.25", 
-        p: 4.25,
+        Price: 4.25,
         Ingridients: "Assorted vegetables, broth", 
         AddOns: "", 
         Key: "" 
@@ -72,7 +66,7 @@ export const foodItems = [
         Course: "Appetizers", 
         Name: "Mozzarella Sticks", 
         Description: "Fried mozzarella cheese sticks", 
-        Price: "$6.99", 
+        Price: 6.99, 
         Ingridients: "Mozzarella cheese, breadcrumbs", 
         AddOns: "Marinara sauce", 
         Key: "" 
@@ -82,7 +76,7 @@ export const foodItems = [
         Course: "Appetizers", 
         Name: "Buffalo Wings", 
         Description: "Spicy chicken wings", 
-        Price: "$8.50", 
+        Price: 5.99, 
         Ingridients: "Chicken wings, hot sauce", 
         AddOns: "Ranch dressing", 
         Key: "" 
@@ -92,7 +86,7 @@ export const foodItems = [
         Course: "Appetizers", 
         Name: "Nachos", 
         Description: "Loaded nachos with cheese and toppings", 
-        Price: "$7.25", 
+        Price: 5.99, 
         Ingridients: "Tortilla chips, cheese, salsa, guacamole", 
         AddOns: "Sour cream, jalapenos", 
         Key: "" 
@@ -102,7 +96,7 @@ export const foodItems = [
         Course: "Appetizers", 
         Name: "Bruschetta", 
         Description: "Toasted bread topped with tomatoes and herbs", 
-        Price: "$5.99", 
+        Price: 7.99, 
         Ingridients: "Baguette, tomatoes, garlic, basil", 
         AddOns: "", 
         Key: "" 
@@ -112,7 +106,7 @@ export const foodItems = [
         Course: "Appetizers", 
         Name: "Spinach Artichoke Dip", 
         Description: "Creamy dip with spinach and artichokes", 
-        Price: "$7.75", 
+        Price: 7.75, 
         Ingridients: "Spinach, artichokes, cream cheese", 
         AddOns: "Tortilla chips", 
         Key: "" 
@@ -122,7 +116,7 @@ export const foodItems = [
         Course: "Appetizers", 
         Name: "Stuffed Mushrooms", 
         Description: "Mushroom caps stuffed with cheese and herbs", 
-        Price: "$8.25", 
+        Price: 8.25, 
         Ingridients: "Mushrooms, cheese, breadcrumbs", 
         AddOns: "", 
         Key: "" 
@@ -132,7 +126,7 @@ export const foodItems = [
         Course: "Salad", 
         Name: "Caesar Salad", 
         Description: "Classic Caesar salad with romaine lettuce, croutons, and Caesar dressing", 
-        Price: "$8.99", 
+        Price: 8.99, 
         Ingridients: "Romaine lettuce, croutons, Parmesan cheese", 
         AddOns: "Grilled chicken", 
         Key: "" 
@@ -142,7 +136,7 @@ export const foodItems = [
         Course: "Salad", 
         Name: "Greek Salad", 
         Description: "Fresh Greek salad with tomatoes, cucumbers, olives, and feta cheese", 
-        Price: "$7.50", 
+        Price: 7.50, 
         Ingridients: "Tomatoes, cucumbers, olives, feta cheese", 
         AddOns: "Grilled shrimp", 
         Key: "" 
@@ -152,7 +146,7 @@ export const foodItems = [
         Course: "Salad", 
         Name: "Caprese Salad", 
         Description: "Classic Italian Caprese salad with fresh tomatoes, mozzarella cheese, and basil", 
-        Price: "$9.25", 
+        Price: 9.25, 
         Ingridients: "Tomatoes, mozzarella cheese, basil", 
         AddOns: "Balsamic glaze", 
         Key: "" 
@@ -162,7 +156,7 @@ export const foodItems = [
         Course: "Salad", 
         Name: "Cobb Salad", 
         Description: "Delicious Cobb salad with mixed greens, avocado, bacon, and blue cheese", 
-        Price: "$10.50", 
+        Price: 10.50, 
         Ingridients: "Mixed greens, avocado, bacon, blue cheese", 
         AddOns: "Grilled chicken", 
         Key: "" 
@@ -172,7 +166,7 @@ export const foodItems = [
         Course: "Salad", 
         Name: "Spinach Salad", 
         Description: "Fresh spinach salad with strawberries, almonds, and feta cheese", 
-        Price: "$8.75", 
+        Price: 8.75, 
         Ingridients: "Spinach, strawberries, almonds, feta cheese", 
         AddOns: "Grilled salmon", 
         Key: "" 
@@ -182,7 +176,7 @@ export const foodItems = [
         Course: "Salad", 
         Name: "Waldorf Salad", 
         Description: "Traditional Waldorf salad with apples, grapes, walnuts, and celery", 
-        Price: "$7.99", 
+        Price: 7.99, 
         Ingridients: "Apples, grapes, walnuts, celery", 
         AddOns: "Grilled chicken", 
         Key: "" 
@@ -192,7 +186,7 @@ export const foodItems = [
         Course: "Fish", 
         Name: "Grilled Salmon", 
         Description: "Fresh grilled salmon served with lemon butter sauce", 
-        Price: "$14.99", 
+        Price: 14.99, 
         Ingridients: "Salmon fillet, lemon, butter", 
         AddOns: "Steamed vegetables", 
         Key: "" 
@@ -202,7 +196,7 @@ export const foodItems = [
         Course: "Fish", 
         Name: "Fish and Chips", 
         Description: "Classic British dish with battered fish and fries", 
-        Price: "$12.50", 
+        Price: 12.50, 
         Ingridients: "Cod fillets, batter, potatoes", 
         AddOns: "Tartar sauce, malt vinegar", 
         Key: "" 
@@ -212,7 +206,7 @@ export const foodItems = [
         Course: "Fish", 
         Name: "Shrimp Scampi", 
         Description: "Juicy shrimp cooked in garlic butter sauce", 
-        Price: "$13.75", 
+        Price: 13.75, 
         Ingridients: "Shrimp, garlic, butter, white wine", 
         AddOns: "Pasta, breadsticks", 
         Key: "" 
@@ -222,7 +216,7 @@ export const foodItems = [
         Course: "Fish", 
         Name: "Grilled Swordfish", 
         Description: "Flavorful grilled swordfish steak", 
-        Price: "$16.50", 
+        Price: 16.50, 
         Ingridients: "Swordfish steak, lemon, herbs", 
         AddOns: "Roasted potatoes, asparagus", 
         Key: "" 
@@ -232,7 +226,7 @@ export const foodItems = [
         Course: "Fish", 
         Name: "Lobster Tail", 
         Description: "Buttery lobster tail cooked to perfection", 
-        Price: "$22.99", 
+        Price: 22.99, 
         Ingridients: "Lobster tail, butter", 
         AddOns: "Drawn butter, lemon", 
         Key: "" 
@@ -242,7 +236,7 @@ export const foodItems = [
         Course: "Fish", 
         Name: "Crab Cakes", 
         Description: "Delicious crab cakes made with lump crab meat", 
-        Price: "$15.75", 
+        Price: 15.75, 
         Ingridients: "Crab meat, breadcrumbs, spices", 
         AddOns: "Remoulade sauce", 
         Key: "" 
@@ -252,7 +246,7 @@ export const foodItems = [
         Course: "Main course", 
         Name: "Filet Mignon", 
         Description: "Tender filet mignon cooked to perfection", 
-        Price: "$29.99", 
+        Price: 29.99, 
         Ingridients: "Beef tenderloin, seasoning", 
         AddOns: "Mashed potatoes, green beans", 
         Key: "" 
@@ -262,7 +256,7 @@ export const foodItems = [
         Course: "Main course", 
         Name: "Lobster Risotto", 
         Description: "Creamy risotto with chunks of lobster meat", 
-        Price: "$32.50", 
+        Price: 32.50, 
         Ingridients: "Arborio rice, lobster meat, Parmesan cheese", 
         AddOns: "Asparagus spears", 
         Key: "" 
@@ -272,7 +266,7 @@ export const foodItems = [
         Course: "Main course", 
         Name: "Vegetable Wellington", 
         Description: "Vegetarian Wellington filled with seasonal vegetables", 
-        Price: "$24.99", 
+        Price: 24.99, 
         Ingridients: "Mushrooms, spinach, puff pastry", 
         AddOns: "Roasted vegetables", 
         Key: "" 
@@ -284,7 +278,7 @@ export const foodItems = [
         Course: "Palate cleanser", 
         Name: "Lemon Sorbet", 
         Description: "Refreshing lemon sorbet", 
-        Price: "$6.50", 
+        Price: 6.50, 
         Ingridients: "Lemon juice, sugar", 
         AddOns: "Fresh mint", 
         Key: "" 
@@ -294,7 +288,7 @@ export const foodItems = [
         Course: "Palate cleanser", 
         Name: "Cucumber Mint Granita", 
         Description: "Crisp and refreshing cucumber mint granita", 
-        Price: "$7.25", 
+        Price: 7.25, 
         Ingridients: "Cucumber, mint, sugar", 
         AddOns: "", 
         Key: "" 
@@ -304,7 +298,7 @@ export const foodItems = [
         Course: "Palate cleanser", 
         Name: "Blood Orange Sorbet", 
         Description: "Zesty blood orange sorbet", 
-        Price: "$6.99", 
+        Price: 6.99, 
         Ingridients: "Blood orange juice, sugar", 
         AddOns: "", 
         Key: "" 
@@ -315,7 +309,7 @@ export const foodItems = [
         Course: "Desserts", 
         Name: "Crème Brûlée", 
         Description: "Classic French custard with caramelized sugar topping", 
-        Price: "$8.99", 
+        Price: 8.99, 
         Ingridients: "Egg yolks, cream, vanilla bean", 
         AddOns: "", 
         Key: "" 
@@ -325,7 +319,7 @@ export const foodItems = [
         Course: "Desserts", 
         Name: "Tiramisu", 
         Description: "Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese", 
-        Price: "$10.50", 
+        Price: 10.50, 
         Ingridients: "Ladyfingers, coffee, mascarpone cheese", 
         AddOns: "", 
         Key: "" 
@@ -335,7 +329,7 @@ export const foodItems = [
         Course: "Desserts", 
         Name: "Chocolate Truffle Cake", 
         Description: "Decadent chocolate cake with a creamy truffle filling", 
-        Price: "$11.75", 
+        Price: 11.75, 
         Ingridients: "Chocolate, cream, butter", 
         AddOns: "Whipped cream", 
         Key: "" 
@@ -345,7 +339,7 @@ export const foodItems = [
         Course: "Desserts", 
         Name: "Key Lime Pie", 
         Description: "Tangy and refreshing key lime pie", 
-        Price: "$9.25", 
+        Price: 9.25, 
         Ingridients: "Key lime juice, condensed milk", 
         AddOns: "Whipped cream", 
         Key: "" 
@@ -355,7 +349,7 @@ export const foodItems = [
         Course: "Desserts", 
         Name: "Apple Tart", 
         Description: "Warm apple tart with flaky pastry crust", 
-        Price: "$10.99", 
+        Price: 10.99, 
         Ingridients: "Apples, pastry dough", 
         AddOns: "Vanilla ice cream", 
         Key: "" 
@@ -366,7 +360,7 @@ export const foodItems = [
         Course: "Drinks", 
         Name: "Cabernet Sauvignon", 
         Description: "Full-bodied red wine", 
-        Price: "$12.99 (per glass)", 
+        Price: 12.99, 
         Ingridients: "", 
         AddOns: "", 
         Key: "" 
@@ -376,7 +370,7 @@ export const foodItems = [
         Course: "Drinks", 
         Name: "Chardonnay", 
         Description: "Dry white wine with hints of oak", 
-        Price: "$10.99 (per glass)", 
+        Price: 10.99, 
         Ingridients: "", 
         AddOns: "", 
         Key: "" 
@@ -386,7 +380,7 @@ export const foodItems = [
         Course: "Drinks", 
         Name: "Old Fashioned", 
         Description: "Classic cocktail made with bourbon, sugar, and bitters", 
-        Price: "$14.50", 
+        Price: 14.50, 
         Ingridients: "Bourbon, sugar, bitters", 
         AddOns: "Orange twist, cherry", 
         Key: "" 
@@ -396,7 +390,7 @@ export const foodItems = [
         Course: "Drinks", 
         Name: "Negroni", 
         Description: "Italian cocktail with gin, vermouth, and Campari", 
-        Price: "$13.75", 
+        Price: 13.75, 
         Ingridients: "Gin, vermouth, Campari", 
         AddOns: "Orange twist", 
         Key: "" 
@@ -406,7 +400,7 @@ export const foodItems = [
         Course: "Drinks", 
         Name: "Mojito", 
         Description: "Refreshing Cuban cocktail with rum, mint, lime, and soda water", 
-        Price: "$11.99", 
+        Price: 11.99, 
         Ingridients: "Rum, mint leaves, lime, soda water", 
         AddOns: "", 
         Key: "" 
@@ -416,7 +410,7 @@ export const foodItems = [
         Course: "Drinks", 
         Name: "Cosmopolitan", 
         Description: "Vodka cocktail with cranberry juice, lime, and triple sec", 
-        Price: "$12.25", 
+        Price: 12.25, 
         Ingridients: "Vodka, cranberry juice, lime, triple sec", 
         AddOns: "Lime twist", 
         Key: "" 
@@ -426,7 +420,7 @@ export const foodItems = [
         Course: "Drinks", 
         Name: "Sparkling Water", 
         Description: "Carbonated mineral water", 
-        Price: "$4.50", 
+        Price: 4.50, 
         Ingridients: "", 
         AddOns: "Lemon wedge", 
         Key: "" 
