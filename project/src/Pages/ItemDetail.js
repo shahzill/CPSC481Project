@@ -11,6 +11,7 @@ import Navbar from "../Components/Navbar";
 import "../Style/Navbar.css";
 import "../Style/ItemDetail.css";
 import { foodItems } from "../Data/FoodItems";
+import { addOns } from "../Data/FoodItems";
 import steakFries from "../Images/SteakFries.jpg";
 import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
 
@@ -22,6 +23,7 @@ function ItemDetailPage() {
   const [sidesToAdd, setSidesToAdd] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState();
+  const [sides, setSides] = useState([]);
   // Successfully added button logic:
 
   const [isAdded, setIsAdded] = useState(false);
@@ -37,7 +39,11 @@ function ItemDetailPage() {
         break;
       }
     }
-
+    const sidesIdArray = specificFoodItem.AddOns.split(",");
+    const sideArray = addOns.filter((addon) => {
+      return sidesIdArray.includes(addon.id.toString());
+    });
+    setSides(sideArray);
     setPrice(specificFoodItem.Price);
   }, []);
   const handleAddToOrder = () => {
@@ -163,31 +169,23 @@ function ItemDetailPage() {
                 <div class="inner3">
                   <b> Add sides: </b>
                 </div>
-
-                <div class="addon">
-                  <input
-                    type="checkbox"
-                    id="left-side"
-                    name="left-side"
-                    value="Fries"
-                    className="bigger-checkbox"
-                    onChange={handleCheckboxChange}
-                  ></input>
-                  <p className="addon-content">Fries</p>
-                </div>
-
-                <div class="addon">
-                  <input
-                    type="checkbox"
-                    id="left-side"
-                    name="left-side"
-                    value="Mashed Potatoes"
-                    className="bigger-checkbox"
-                    onChange={handleCheckboxChange}
-                  ></input>
-                  <p className="addon-content">Mashed Potatoes</p>
-                </div>
-
+                {sides &&
+                  Array.isArray(sides) &&
+                  sides.map((addon) => (
+                    <div className="addon" key={addon.id}>
+                      <input
+                        type="checkbox"
+                        id="left-side"
+                        name="left-side"
+                        value={addon.Name}
+                        className="bigger-checkbox"
+                        onChange={handleCheckboxChange}
+                      />
+                      <label htmlFor={addon.Name} className="addon-content">
+                        {addon.Name}
+                      </label>
+                    </div>
+                  ))}
                 <div class="comment-box">
                   <div class="inner4">
                     <b>Special instructions:</b>
