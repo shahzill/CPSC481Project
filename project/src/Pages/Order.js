@@ -28,9 +28,18 @@ function OrderPage() {
   const [order5Total, setOrder5Total] = useState(0);
   const [TotalOrderPrice, setTotalOrderPrice] = useState();
   const [showPopup, setShowPopup] = useState(false);
+  const [showPopupDelete, setShowPopupDelete] = useState(false);
 
   const confirmationMsg = {
     text: "Order Confirmed",
+    theme: {
+      backgroundColor: "green",
+      color: "white",
+    },
+  };
+
+  const DeleteMsg = {
+    text: "Item Removed",
     theme: {
       backgroundColor: "green",
       color: "white",
@@ -161,6 +170,7 @@ function OrderPage() {
               OrderToCheck.ItemPrice = 0.0;
               OrderToCheck.ItemTotalPrice = 0.0;
               OrderToCheck.ItemCustomizations = "";
+              setShowPopupDelete(true);
             }
             break;
           }
@@ -199,6 +209,7 @@ function OrderPage() {
 
   const closePopup = () => {
     setShowPopup(false);
+    setShowPopupDelete(false);
   };
 
   return (
@@ -212,6 +223,11 @@ function OrderPage() {
         <PopupNotification
           message={confirmationMsg}
           showPopup={showPopup}
+          closePopup={closePopup}
+        />
+        <PopupNotification
+          message={DeleteMsg}
+          showPopup={showPopupDelete}
           closePopup={closePopup}
         />
         <div className="contentOrderPage">
@@ -302,7 +318,9 @@ function OrderPage() {
                                   onClick={() =>
                                     decrement(order.id, order.OrderNumber)
                                   }
-                                ></button>
+                                >
+                                  -
+                                </button>
                               ) : (
                                 <FontAwesomeIcon
                                   icon={faTrash}

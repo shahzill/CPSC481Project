@@ -7,6 +7,7 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
+import PopupNotification from "../Components/PopupNotification";
 import Navbar from "../Components/Navbar";
 import "../Style/Navbar.css";
 import "../Style/ItemDetail.css";
@@ -24,9 +25,17 @@ function ItemDetailPage() {
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState();
   const [sides, setSides] = useState([]);
+  const [addedToOrder, setAddedToOrder] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   // Successfully added button logic:
 
-  const [isAdded, setIsAdded] = useState(false);
+  const confirmationMsg = {
+    text: "Item added! Go to orders tab to confirm your order",
+    theme: {
+      backgroundColor: "green",
+      color: "white",
+    },
+  };
   useEffect(() => {
     const orderArrays = [Order1, Order2, Order3, Order4, Order5];
 
@@ -64,6 +73,8 @@ function ItemDetailPage() {
         }
       }
     }
+    setAddedToOrder(true);
+    setShowPopup(true);
   };
   function handleCheckboxChange(event) {
     const { checked, value } = event.target;
@@ -75,6 +86,9 @@ function ItemDetailPage() {
       setSidesToAdd((prevSides) => prevSides.filter((side) => side !== value));
     }
   }
+  const closePopup = () => {
+    setShowPopup(false);
+  };
 
   const decrement = () => {
     if (quantity > 1) {
@@ -107,6 +121,11 @@ function ItemDetailPage() {
             <Navbar />
           </React.Fragment>
         </div>
+        <PopupNotification
+          message={confirmationMsg}
+          showPopup={showPopup}
+          closePopup={closePopup}
+        />
         {/** Item details columns */}
         <div class="container">
           <div class="column">
@@ -225,19 +244,19 @@ function ItemDetailPage() {
               {/* Add to Order and Go to Order*/}
               <div className="add-go-to-order-buttons">
                 <div>
-                  <button className="add-to-order" onClick={handleAddToOrder}>
-                    Add to Order
-                  </button>
-                  {isAdded && (
-                    <span class="temp">Successfully added &#x2713;</span>
+                  {!addedToOrder && (
+                    <button className="add-to-order" onClick={handleAddToOrder}>
+                      Add to Order
+                    </button>
                   )}
                 </div>
-
-                <div>
-                  <Link to="/Order">
-                    <button className="go-to-order">Go to Order</button>
-                  </Link>
-                </div>
+                {addedToOrder && (
+                  <div>
+                    <Link to="/Order">
+                      <button className="go-to-order">Go to Order</button>
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>
