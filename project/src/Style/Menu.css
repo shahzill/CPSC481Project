@@ -6,18 +6,26 @@
 
 .contentMenuPage{
     padding: 10px;
-    height: 90vh;
+    height: 80vh;
 }
 
 .search-bar{
     color: white;
     text-align: right;
+    margin-right: 180px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+.search-menu-bar {
+    height: 100%; 
+    width: 100%; 
 }
 
 .menu{
     display: flex;
     flex-direction: row;
     margin-top: 30px;
+    height: 80vh;
 }
 .price-key{
     display: flex;
@@ -26,6 +34,17 @@
 }
 .courses{
     width: 25%;
+}
+.font-size-link-course{
+    font-size: 30px;
+    text-decoration: none;
+    color: White;
+    transition: text-shadow 0.3s ease;
+    margin-top: 20px;
+}
+
+.font-size-link-course:hover{
+    color: var(--main-color);
 }
 
 .key-header{
@@ -66,7 +85,7 @@
 
 .menu-items{
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     overflow: auto;
 }
 .menu-items::-webkit-scrollbar {
