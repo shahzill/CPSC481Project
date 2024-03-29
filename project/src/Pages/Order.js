@@ -364,12 +364,11 @@ function OrderPage() {
                       {orderArray[0].OrderStatus ===
                         "Order has not been placed yet" &&
                         order.ItemName && (
-                          <button
-                            className="EditOrder"
-                            onClick={() => ConfirmOrder(orderArray)}
+                          <Link
+                            to={`/EditOrder/${order.OrderNumber}/${order.id}`}
                           >
-                            Edit
-                          </button>
+                            <button className="EditOrder">Edit</button>
+                          </Link>
                         )}
                     </div>
                     {order.ItemComments && (

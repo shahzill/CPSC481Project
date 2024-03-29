@@ -261,7 +261,10 @@ function MenuPage() {
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
-                          <p>Price: ${item.Price}</p>
+                          <div className="price-key">
+                            <p>Price: ${item.Price}</p>
+                            <p>{item.Key}</p>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -284,7 +287,10 @@ function MenuPage() {
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
-                          <p>Price: ${item.Price}</p>
+                          <div className="price-key">
+                            <p>Price: ${item.Price}</p>
+                            <p>{item.Key}</p>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -307,7 +313,10 @@ function MenuPage() {
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
-                          <p>Price: ${item.Price}</p>
+                          <div className="price-key">
+                            <p>Price: ${item.Price}</p>
+                            <p>{item.Key}</p>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -330,7 +339,10 @@ function MenuPage() {
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
-                          <p>Price: ${item.Price}</p>
+                          <div className="price-key">
+                            <p>Price: ${item.Price}</p>
+                            <p>{item.Key}</p>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -353,7 +365,10 @@ function MenuPage() {
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
-                          <p>Price: ${item.Price}</p>
+                          <div className="price-key">
+                            <p>Price: ${item.Price}</p>
+                            <p>{item.Key}</p>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -376,7 +391,10 @@ function MenuPage() {
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
-                          <p>Price: ${item.Price}</p>
+                          <div className="price-key">
+                            <p>Price: ${item.Price}</p>
+                            <p>{item.Key}</p>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -399,7 +417,10 @@ function MenuPage() {
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
-                          <p>Price: ${item.Price}</p>
+                          <div className="price-key">
+                            <p>Price: ${item.Price}</p>
+                            <p>{item.Key}</p>
+                          </div>
                         </div>
                       </div>
                     </Link>

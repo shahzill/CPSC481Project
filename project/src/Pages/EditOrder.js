@@ -16,10 +16,10 @@ import { addOns } from "../Data/FoodItems";
 import steakFries from "../Images/SteakFries.jpg";
 import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
 
-function ItemDetailPage() {
-  let { id } = useParams(); // Access the ID parameter from the URL
-  const specificFoodItem =
-    foodItems.find((foodItem) => foodItem.id === parseInt(id)) || null;
+function EditOrderPage() {
+  let { OrderId } = useParams(); // Access the ID parameter from the URL
+  let { ItemId } = useParams(); // Access the ID parameter from the URL
+  const [specificFoodItem, setSpecificFoodItem] = useState();
   const [orderNumberToFill, setOrdernumber] = useState();
   const [sidesToAdd, setSidesToAdd] = useState([]);
   const [quantity, setQuantity] = useState(1);
@@ -27,7 +27,8 @@ function ItemDetailPage() {
   const [sides, setSides] = useState([]);
   const [addedToOrder, setAddedToOrder] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [comments, setComments] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [specialInstructions, setSpecialInstructions] = useState();
   // Successfully added button logic:
 
   const confirmationMsg = {
@@ -38,27 +39,38 @@ function ItemDetailPage() {
     },
   };
   useEffect(() => {
-    const orderArrays = [Order1, Order2, Order3, Order4, Order5];
-
-    for (let i = 0; i < orderArrays.length; i++) {
-      let totalOrderPrice = 0;
-      const orderArray = orderArrays[i];
-      const orderNotPlaced = orderArray.find((order) => order.id === 1);
-      if (orderNotPlaced.OrderStatus === "Order has not been placed yet") {
-        setOrdernumber(orderNotPlaced.OrderNumber);
-        break;
+    const orderFinderArrays = [Order1, Order2, Order3, Order4, Order5];
+    let foodItem;
+    let orderRetrievedFinal;
+    for (let i = 0; i < orderFinderArrays.length; i++) {
+      const OrderArray = orderFinderArrays[i];
+      const orderRetrieved = OrderArray.find(
+        (order) => order.id === parseInt(ItemId)
+      );
+      console.log("Item id = ", ItemId);
+      console.log("Order id = ", OrderId);
+      console.log("FoodItem = ", orderRetrieved);
+      if (
+        orderRetrieved.OrderNumber === parseInt(OrderId) &&
+        orderRetrieved.id === parseInt(ItemId)
+      ) {
+        orderRetrievedFinal = orderRetrieved;
+        foodItem =
+          foodItems.find(
+            (foodItem) => foodItem.Name === orderRetrieved.ItemName
+          ) || null;
+        setSpecificFoodItem(foodItem);
       }
     }
-    const sidesIdArray = specificFoodItem.AddOns.split(",");
+    setSpecialInstructions(orderRetrievedFinal.ItemComments);
+    const sidesIdArray = foodItem.AddOns.split(",");
     const sideArray = addOns.filter((addon) => {
       return sidesIdArray.includes(addon.id.toString());
     });
     setSides(sideArray);
-    setPrice(specificFoodItem.Price);
+    setPrice(foodItem.Price);
+    setIsLoading(false);
   }, []);
-  const handleTextareaChange = (event) => {
-    setComments(event.target.value);
-  };
   const handleAddToOrder = () => {
     const orderArrays = [Order1, Order2, Order3, Order4, Order5];
     for (let i = 0; i < orderArrays.length; i++) {
@@ -72,8 +84,6 @@ function ItemDetailPage() {
             OrderToCheck.ItemPrice = specificFoodItem.Price;
             OrderToCheck.ItemTotalPrice = price;
             OrderToCheck.ItemCustomizations = sidesToAdd.join(", ");
-            OrderToCheck.ItemComments = comments;
-            console.log("COMMMENTS", comments);
             break;
           }
         }
@@ -120,19 +130,20 @@ function ItemDetailPage() {
   };
 
   return (
-    <>
-      <div className="black-background">
-        <div className="navbar">
-          <React.Fragment>
-            <Navbar />
-          </React.Fragment>
-        </div>
-        <PopupNotification
-          message={confirmationMsg}
-          showPopup={showPopup}
-          closePopup={closePopup}
-        />
-        {/** Item details columns */}
+    <div className="black-background">
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <PopupNotification
+        message={confirmationMsg}
+        showPopup={showPopup}
+        closePopup={closePopup}
+      />
+
+      {isLoading ? (
+        <div>Loading...</div> // Render loading indicator while waiting for useEffect to complete
+      ) : (
+        // Render UI components once specificFoodItem is set
         <div class="container">
           <div class="column">
             {/** Column 1*/}
@@ -218,9 +229,8 @@ function ItemDetailPage() {
                   <textarea
                     id="comments"
                     name="comments"
-                    value={comments} // Bind the value of the textarea to the 'comments' state
+                    value={specialInstructions}
                     placeholder="Add special instructions..."
-                    onChange={handleTextareaChange} // Call handleTextareaChange function on change
                   ></textarea>
                 </div>
               </div>
@@ -269,9 +279,9 @@ function ItemDetailPage() {
             </div>
           </div>
         </div>
-      </div>
-    </>
+      )}
+    </div>
   );
 }
 
-export default ItemDetailPage;
+export default EditOrderPage;

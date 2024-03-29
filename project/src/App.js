@@ -6,6 +6,7 @@ import MenuPage from "./Pages/Menu";
 import OrderPage from "./Pages/Order";
 import ItemDetailPage from "./Pages/ItemDetail";
 import PaymentPage from "./Pages/Payment";
+import EditOrderPage from "./Pages/EditOrder";
 import PopupNotification from "./Components/PopupNotification";
 
 function App() {
@@ -70,6 +71,10 @@ function App() {
           <Route path="/ItemDetail/:id" element={<ItemDetailPage />} />
           <Route path="/Order" element={<OrderPage />} />
           <Route path="/Payment" element={<PaymentPage />} />
+          <Route
+            path="/EditOrder/:OrderId/:ItemId"
+            element={<EditOrderPage />}
+          />
         </Routes>
       </Router>
     </>

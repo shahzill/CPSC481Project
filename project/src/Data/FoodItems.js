@@ -17,7 +17,7 @@ export const foodItems = [
     Description: "Homemade chicken noodle soup",
     Price: 4.5,
     Ingridients: "Chicken, noodles, carrots, celery",
-    AddOns: "",
+    AddOns: "1,6", // Fries, Baked Beans
     Key: "AF",
   },
   {
@@ -27,7 +27,7 @@ export const foodItems = [
     Description: "Italian vegetable soup",
     Price: 4.25,
     Ingridients: "Beans, pasta, tomatoes, vegetables",
-    AddOns: "",
+    AddOns: "1,4", // Fries, Green Beans
     Key: "V",
   },
   {
@@ -37,8 +37,8 @@ export const foodItems = [
     Description: "Creamy clam chowder",
     Price: 5.25,
     Ingridients: "Clams, potatoes, cream",
-    AddOns: "",
-    Key: "AF",
+    AddOns: "1,6", // Fries, Baked Beans
+    Key: "",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const foodItems = [
     Description: "Traditional French onion soup",
     Price: 4.75,
     Ingridients: "Onions, beef broth, cheese",
-    AddOns: "",
+    AddOns: "1,3,4", // Fries, Cheese Bread, Green Beans
     Key: "V, AF",
   },
   {
@@ -57,8 +57,8 @@ export const foodItems = [
     Description: "Hearty vegetable soup",
     Price: 4.25,
     Ingridients: "Assorted vegetables, broth",
-    AddOns: "",
-    Key: "",
+    AddOns: "1,3,4", // Fries, Cheese Bread, Green Beans
+    Key: "V",
   },
   // Appetizers
   {
@@ -68,7 +68,7 @@ export const foodItems = [
     Description: "Fried mozzarella cheese sticks",
     Price: 6.99,
     Ingridients: "Mozzarella cheese, breadcrumbs",
-    AddOns: "Marinara sauce",
+    AddOns: "1,2",
     Key: "",
   },
   {
@@ -78,8 +78,8 @@ export const foodItems = [
     Description: "Spicy chicken wings",
     Price: 5.99,
     Ingridients: "Chicken wings, hot sauce",
-    AddOns: "Ranch dressing",
-    Key: "",
+    AddOns: "15,17,1,3",
+    Key: "AF",
   },
   {
     id: 9,
@@ -88,8 +88,8 @@ export const foodItems = [
     Description: "Loaded nachos with cheese and toppings",
     Price: 5.99,
     Ingridients: "Tortilla chips, cheese, salsa, guacamole",
-    AddOns: "Sour cream, jalapenos",
-    Key: "",
+    AddOns: "5,7,15,17",
+    Key: "AF",
   },
   {
     id: 10,
@@ -98,7 +98,7 @@ export const foodItems = [
     Description: "Toasted bread topped with tomatoes and herbs",
     Price: 7.99,
     Ingridients: "Baguette, tomatoes, garlic, basil",
-    AddOns: "",
+    AddOns: "11,12",
     Key: "",
   },
   {
@@ -108,8 +108,8 @@ export const foodItems = [
     Description: "Creamy dip with spinach and artichokes",
     Price: 7.75,
     Ingridients: "Spinach, artichokes, cream cheese",
-    AddOns: "Tortilla chips",
-    Key: "",
+    AddOns: "1,3",
+    Key: "AF",
   },
   {
     id: 12,
@@ -118,8 +118,8 @@ export const foodItems = [
     Description: "Mushroom caps stuffed with cheese and herbs",
     Price: 8.25,
     Ingridients: "Mushrooms, cheese, breadcrumbs",
-    AddOns: "",
-    Key: "",
+    AddOns: "7,13,14,16",
+    Key: "V, AF",
   },
   {
     id: 13,
@@ -129,8 +129,8 @@ export const foodItems = [
       "Classic Caesar salad with romaine lettuce, croutons, and Caesar dressing",
     Price: 8.99,
     Ingridients: "Romaine lettuce, croutons, Parmesan cheese",
-    AddOns: "Grilled chicken",
-    Key: "",
+    AddOns: "22,19",
+    Key: "V, AF",
   },
   {
     id: 14,
@@ -140,8 +140,8 @@ export const foodItems = [
       "Fresh Greek salad with tomatoes, cucumbers, olives, and feta cheese",
     Price: 7.5,
     Ingridients: "Tomatoes, cucumbers, olives, feta cheese",
-    AddOns: "Grilled shrimp",
-    Key: "",
+    AddOns: "22,19,21",
+    Key: "V< AF",
   },
   {
     id: 15,
@@ -151,8 +151,8 @@ export const foodItems = [
       "Classic Italian Caprese salad with fresh tomatoes, mozzarella cheese, and basil",
     Price: 9.25,
     Ingridients: "Tomatoes, mozzarella cheese, basil",
-    AddOns: "Balsamic glaze",
-    Key: "",
+    AddOns: "23,20,21",
+    Key: "AF",
   },
   {
     id: 16,
@@ -162,8 +162,8 @@ export const foodItems = [
       "Delicious Cobb salad with mixed greens, avocado, bacon, and blue cheese",
     Price: 10.5,
     Ingridients: "Mixed greens, avocado, bacon, blue cheese",
-    AddOns: "Grilled chicken",
-    Key: "",
+    AddOns: "21,22,23",
+    Key: "AF",
   },
   {
     id: 17,
@@ -173,8 +173,8 @@ export const foodItems = [
       "Fresh spinach salad with strawberries, almonds, and feta cheese",
     Price: 8.75,
     Ingridients: "Spinach, strawberries, almonds, feta cheese",
-    AddOns: "Grilled salmon",
-    Key: "",
+    AddOns: "18,23,22",
+    Key: "V, AF",
   },
   {
     id: 18,
@@ -184,8 +184,8 @@ export const foodItems = [
       "Traditional Waldorf salad with apples, grapes, walnuts, and celery",
     Price: 7.99,
     Ingridients: "Apples, grapes, walnuts, celery",
-    AddOns: "Grilled chicken",
-    Key: "",
+    AddOns: "22,19",
+    Key: "V, AF",
   },
   {
     id: 19,
@@ -194,8 +194,8 @@ export const foodItems = [
     Description: "Fresh grilled salmon served with lemon butter sauce",
     Price: 14.99,
     Ingridients: "Salmon fillet, lemon, butter",
-    AddOns: "Steamed vegetables",
-    Key: "",
+    AddOns: "1,2,3,7,11",
+    Key: "AF",
   },
   {
     id: 20,
@@ -204,8 +204,8 @@ export const foodItems = [
     Description: "Classic British dish with battered fish and fries",
     Price: 12.5,
     Ingridients: "Cod fillets, batter, potatoes",
-    AddOns: "Tartar sauce, malt vinegar",
-    Key: "",
+    AddOns: "15,17,10,9",
+    Key: "AF",
   },
   {
     id: 21,
@@ -214,7 +214,7 @@ export const foodItems = [
     Description: "Juicy shrimp cooked in garlic butter sauce",
     Price: 13.75,
     Ingridients: "Shrimp, garlic, butter, white wine",
-    AddOns: "Pasta, breadsticks",
+    AddOns: "3,1,2",
     Key: "",
   },
   {
@@ -224,7 +224,7 @@ export const foodItems = [
     Description: "Flavorful grilled swordfish steak",
     Price: 16.5,
     Ingridients: "Swordfish steak, lemon, herbs",
-    AddOns: "Roasted potatoes, asparagus",
+    AddOns: "1,2,3,13",
     Key: "",
   },
   {
@@ -234,8 +234,8 @@ export const foodItems = [
     Description: "Buttery lobster tail cooked to perfection",
     Price: 22.99,
     Ingridients: "Lobster tail, butter",
-    AddOns: "Drawn butter, lemon",
-    Key: "",
+    AddOns: "11,12,13,14",
+    Key: "AF",
   },
   {
     id: 24,
@@ -244,7 +244,7 @@ export const foodItems = [
     Description: "Delicious crab cakes made with lump crab meat",
     Price: 15.75,
     Ingridients: "Crab meat, breadcrumbs, spices",
-    AddOns: "Remoulade sauce",
+    AddOns: "8,5,4",
     Key: "",
   },
   {
@@ -254,7 +254,7 @@ export const foodItems = [
     Description: "Tender filet mignon cooked to perfection",
     Price: 29.99,
     Ingridients: "Beef tenderloin, seasoning",
-    AddOns: "Mashed potatoes, green beans",
+    AddOns: "2,4,12,14",
     Key: "",
   },
   {
@@ -264,7 +264,7 @@ export const foodItems = [
     Description: "Creamy risotto with chunks of lobster meat",
     Price: 32.5,
     Ingridients: "Arborio rice, lobster meat, Parmesan cheese",
-    AddOns: "Asparagus spears",
+    AddOns: "13,12,15,17",
     Key: "",
   },
   {
@@ -274,7 +274,7 @@ export const foodItems = [
     Description: "Vegetarian Wellington filled with seasonal vegetables",
     Price: 24.99,
     Ingridients: "Mushrooms, spinach, puff pastry",
-    AddOns: "Roasted vegetables",
+    AddOns: "20,12,10",
     Key: "",
   },
   // Add more main courses
@@ -286,7 +286,7 @@ export const foodItems = [
     Description: "Refreshing lemon sorbet",
     Price: 6.5,
     Ingridients: "Lemon juice, sugar",
-    AddOns: "Fresh mint",
+    AddOns: "25",
     Key: "",
   },
   {
@@ -295,7 +295,7 @@ export const foodItems = [
     Name: "Cucumber Mint Granita",
     Description: "Crisp and refreshing cucumber mint granita",
     Price: 7.25,
-    Ingridients: "Cucumber, mint, sugar",
+    Ingridients: "25,26",
     AddOns: "",
     Key: "",
   },
@@ -305,7 +305,7 @@ export const foodItems = [
     Name: "Blood Orange Sorbet",
     Description: "Zesty blood orange sorbet",
     Price: 6.99,
-    Ingridients: "Blood orange juice, sugar",
+    Ingridients: "24,25,26",
     AddOns: "",
     Key: "",
   },
@@ -317,7 +317,7 @@ export const foodItems = [
     Description: "Classic French custard with caramelized sugar topping",
     Price: 8.99,
     Ingridients: "Egg yolks, cream, vanilla bean",
-    AddOns: "",
+    AddOns: "27",
     Key: "",
   },
   {
@@ -328,7 +328,7 @@ export const foodItems = [
       "Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese",
     Price: 10.5,
     Ingridients: "Ladyfingers, coffee, mascarpone cheese",
-    AddOns: "",
+    AddOns: "28,29",
     Key: "",
   },
   {
@@ -338,8 +338,8 @@ export const foodItems = [
     Description: "Decadent chocolate cake with a creamy truffle filling",
     Price: 11.75,
     Ingridients: "Chocolate, cream, butter",
-    AddOns: "Whipped cream",
-    Key: "",
+    AddOns: "31,30,29",
+    Key: "V, AF",
   },
   {
     id: 34,
@@ -348,8 +348,8 @@ export const foodItems = [
     Description: "Tangy and refreshing key lime pie",
     Price: 9.25,
     Ingridients: "Key lime juice, condensed milk",
-    AddOns: "Whipped cream",
-    Key: "",
+    AddOns: "31,27,28",
+    Key: "AF",
   },
   {
     id: 35,
@@ -358,8 +358,8 @@ export const foodItems = [
     Description: "Warm apple tart with flaky pastry crust",
     Price: 10.99,
     Ingridients: "Apples, pastry dough",
-    AddOns: "Vanilla ice cream",
-    Key: "",
+    AddOns: "27",
+    Key: "V, AF",
   },
   // Drinks
   {
@@ -368,8 +368,8 @@ export const foodItems = [
     Name: "Cabernet Sauvignon",
     Description: "Full-bodied red wine",
     Price: 12.99,
-    Ingridients: "",
-    AddOns: "",
+    Ingredients: "Cabernet Sauvignon grapes",
+    AddOns: "34",
     Key: "",
   },
   {
@@ -378,8 +378,8 @@ export const foodItems = [
     Name: "Chardonnay",
     Description: "Dry white wine with hints of oak",
     Price: 10.99,
-    Ingridients: "",
-    AddOns: "",
+    Ingredients: "Chardonnay grapes",
+    AddOns: "35,32",
     Key: "",
   },
   {
@@ -389,7 +389,7 @@ export const foodItems = [
     Description: "Classic cocktail made with bourbon, sugar, and bitters",
     Price: 14.5,
     Ingridients: "Bourbon, sugar, bitters",
-    AddOns: "Orange twist, cherry",
+    AddOns: "34,35",
     Key: "",
   },
   {
@@ -399,7 +399,7 @@ export const foodItems = [
     Description: "Italian cocktail with gin, vermouth, and Campari",
     Price: 13.75,
     Ingridients: "Gin, vermouth, Campari",
-    AddOns: "Orange twist",
+    AddOns: "36",
     Key: "",
   },
   {
@@ -410,7 +410,7 @@ export const foodItems = [
       "Refreshing Cuban cocktail with rum, mint, lime, and soda water",
     Price: 11.99,
     Ingridients: "Rum, mint leaves, lime, soda water",
-    AddOns: "",
+    AddOns: "34,35",
     Key: "",
   },
   {
@@ -420,7 +420,7 @@ export const foodItems = [
     Description: "Vodka cocktail with cranberry juice, lime, and triple sec",
     Price: 12.25,
     Ingridients: "Vodka, cranberry juice, lime, triple sec",
-    AddOns: "Lime twist",
+    AddOns: "33,32",
     Key: "",
   },
   {
@@ -429,8 +429,8 @@ export const foodItems = [
     Name: "Sparkling Water",
     Description: "Carbonated mineral water",
     Price: 4.5,
-    Ingridients: "",
-    AddOns: "Lemon wedge",
+    Ingridients: "Pure spakrling water",
+    AddOns: "34",
     Key: "",
   },
 ];
@@ -442,6 +442,34 @@ export const addOns = [
   { id: 4, Name: "Green Beans" },
   { id: 5, Name: "Creamed Spinach" },
   { id: 6, Name: "Baked Beans" },
-  // Add more items and
-  // These things are needed: id, Name
+  { id: 7, Name: "Sweet Potato Fries" },
+  { id: 8, Name: "Onion Rings" },
+  { id: 9, Name: "Side Salad" },
+  { id: 10, Name: "Corn on the Cob" },
+  { id: 11, Name: "Garlic Bread" },
+  { id: 12, Name: "Macaroni and Cheese" },
+  { id: 13, Name: "Coleslaw" },
+  { id: 14, Name: "Grilled Vegetables" },
+  { id: 15, Name: "Ranch Dressing" },
+  { id: 16, Name: "Extra cheese" },
+  { id: 17, Name: "BBQ dressing" },
+  { id: 18, Name: "Asian Sesame Dressing" },
+  { id: 19, Name: "Croutons" },
+  { id: 20, Name: "Bacon Bits" },
+  { id: 21, Name: "Grilled Chicken" },
+  { id: 22, Name: "Grilled Shrimp" },
+  { id: 23, Name: "Hard-boiled Eggs" },
+  { id: 24, Name: "Blood Orange Sugar" },
+  { id: 25, Name: "Fresh Mint" },
+  { id: 26, Name: "Sugar" },
+  { id: 27, Name: "Vanilla Ice-cream" },
+  { id: 28, Name: "Cookie Crumbs" },
+  { id: 29, Name: "Powdered Sugar" },
+  { id: 30, Name: "Sprinkles" },
+  { id: 31, Name: "Whipped Cream" },
+  { id: 32, Name: "Lime Twist" },
+  { id: 33, Name: "Mint Leaves" },
+  { id: 34, Name: "Lemon Wedge" },
+  { id: 35, Name: "Soda Water" },
+  { id: 36, Name: "Orange Twist" },
 ];
