@@ -219,7 +219,7 @@ textarea::placeholder {
 .pricey {
   font-size: 45px;
   padding-top: 60px;
-  color: rgb(22, 148, 22);
+  color: var(--main-color);
 }
 
 .temp {

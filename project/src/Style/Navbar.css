@@ -44,7 +44,9 @@
     color: white;
     font-size: 20px;
 }
-
+.active{
+    color: var(--main-color);
+}
 .dancingScript {
     font-family: 'Dancing Script', cursive;
     font-size: 30px;

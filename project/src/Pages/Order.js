@@ -233,186 +233,208 @@ function OrderPage() {
           showPopup={showPopupDelete}
           closePopup={closePopup}
         />
-        <div className="contentOrderPage">
-          <div className="OrderStatusSide">
-            <div className="Order">
-              {orders.map((orderArray) => (
-                <div key={orderArray[0].id}>
-                  <div className="Order">
-                    <p className="OrderHeader">
-                      <b>Order {orderArray[0].OrderNumber} status:</b>{" "}
-                      {orderArray[0].OrderStatus}
-                    </p>
-                    <div className="OrderSymbols">
-                      <div
-                        className="iconWithDescription"
-                        style={{
-                          color: orderArray[0].OrderStatusTotal.includes(
-                            "Order has been placed"
-                          )
-                            ? "#7acda6"
-                            : "red",
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faPaperPlane} />
-                        <div className="description">Order placed</div>
-                      </div>
-                      <div
-                        className="iconWithDescription"
-                        style={{
-                          color: orderArray[0].OrderStatusTotal.includes(
-                            "Order has been confirmed"
-                          )
-                            ? "#7acda6"
-                            : "red",
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faClipboardCheck} />
-                        <div className="description">Order confirmed</div>
-                      </div>
-                      <div
-                        className="iconWithDescription"
-                        style={{
-                          color: orderArray[0].OrderStatusTotal.includes(
-                            "Order is being prepared"
-                          )
-                            ? "#7acda6"
-                            : "red",
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faBowlRice} />
-                        <div className="description">Preparing</div>
-                      </div>
-                      <div
-                        className="iconWithDescription"
-                        style={{
-                          color: orderArray[0].OrderStatusTotal.includes(
-                            "Order has been served"
-                          )
-                            ? "#7acda6"
-                            : "red",
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faUtensils} />
-                        <div className="description">Serving</div>
+        {orders.length > 0 && (
+          <div className="contentOrderPage">
+            <div className="OrderStatusSide">
+              <div className="Order">
+                {orders.map((orderArray) => (
+                  <div key={orderArray[0].id}>
+                    <div className="Order">
+                      <p className="OrderHeader">
+                        <b>Order {orderArray[0].OrderNumber} status:</b>{" "}
+                        {orderArray[0].OrderStatus}
+                      </p>
+                      <div className="OrderSymbols">
+                        <div
+                          className="iconWithDescription"
+                          style={{
+                            color: orderArray[0].OrderStatusTotal.includes(
+                              "Order has been placed"
+                            )
+                              ? "#7acda6"
+                              : "red",
+                          }}
+                        >
+                          <FontAwesomeIcon icon={faPaperPlane} />
+                          <div className="description">Order placed</div>
+                        </div>
+                        <div
+                          className="iconWithDescription"
+                          style={{
+                            color: orderArray[0].OrderStatusTotal.includes(
+                              "Order has been confirmed"
+                            )
+                              ? "#7acda6"
+                              : "red",
+                          }}
+                        >
+                          <FontAwesomeIcon icon={faClipboardCheck} />
+                          <div className="description">Order confirmed</div>
+                        </div>
+                        <div
+                          className="iconWithDescription"
+                          style={{
+                            color: orderArray[0].OrderStatusTotal.includes(
+                              "Order is being prepared"
+                            )
+                              ? "#7acda6"
+                              : "red",
+                          }}
+                        >
+                          <FontAwesomeIcon icon={faBowlRice} />
+                          <div className="description">Preparing</div>
+                        </div>
+                        <div
+                          className="iconWithDescription"
+                          style={{
+                            color: orderArray[0].OrderStatusTotal.includes(
+                              "Order has been served"
+                            )
+                              ? "#7acda6"
+                              : "red",
+                          }}
+                        >
+                          <FontAwesomeIcon icon={faUtensils} />
+                          <div className="description">Serving</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="OrderSummarySide">
-            {orders.map((orderArray, index) => (
-              <div key={orderArray[0].id}>
-                <p className="OrderNumber">Order {orderArray[0].OrderNumber}</p>
-                {orderArray.map((order) => (
-                  <div className="FoodItemSummary" key={order.id}>
-                    {order.ItemName && ( // Check if ItemName is not empty
-                      <div className="ItemNameSummary-header">
-                        <span className="header-of-item">{order.ItemName}</span>
-                        <div className="quantity-controls-order-page">
-                          {orderArray[0].OrderStatus ===
-                            "Order has not been placed yet" && (
-                            <React.Fragment>
-                              {order.ItemTotalQuantity > 1 ? (
+            <div className="OrderSummarySide">
+              {orders.map((orderArray, index) => (
+                <div key={orderArray[0].id}>
+                  <p className="OrderNumber">
+                    Order {orderArray[0].OrderNumber}
+                  </p>
+                  {orderArray.map((order) => (
+                    <div className="FoodItemSummary" key={order.id}>
+                      {order.ItemName && ( // Check if ItemName is not empty
+                        <div className="ItemNameSummary-header">
+                          <span className="header-of-item">
+                            {order.ItemName}
+                          </span>
+                          <div className="quantity-controls-order-page">
+                            {orderArray[0].OrderStatus ===
+                              "Order has not been placed yet" && (
+                              <React.Fragment>
+                                {order.ItemTotalQuantity > 1 ? (
+                                  <button
+                                    className="button-quantity-change"
+                                    onClick={() =>
+                                      decrement(order.id, order.OrderNumber)
+                                    }
+                                  >
+                                    -
+                                  </button>
+                                ) : (
+                                  <FontAwesomeIcon
+                                    icon={faTrash}
+                                    className="icon-quantity-change"
+                                    onClick={() =>
+                                      decrement(order.id, order.OrderNumber)
+                                    }
+                                  />
+                                )}
+
+                                <span className="total-quantity">
+                                  {order.ItemTotalQuantity}
+                                </span>
                                 <button
                                   className="button-quantity-change"
                                   onClick={() =>
-                                    decrement(order.id, order.OrderNumber)
+                                    increment(order.id, order.OrderNumber)
                                   }
                                 >
-                                  -
+                                  +
                                 </button>
-                              ) : (
-                                <FontAwesomeIcon
-                                  icon={faTrash}
-                                  className="icon-quantity-change"
-                                  onClick={() =>
-                                    decrement(order.id, order.OrderNumber)
-                                  }
-                                />
-                              )}
-
-                              <span className="total-quantity">
-                                {order.ItemTotalQuantity}
-                              </span>
-                              <button
-                                className="button-quantity-change"
-                                onClick={() =>
-                                  increment(order.id, order.OrderNumber)
-                                }
-                              >
-                                +
-                              </button>
-                            </React.Fragment>
-                          )}
+                              </React.Fragment>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    <div className="Customizations-edit-button">
-                      {order.ItemName && ( // Check if ItemName is not empty
+                      <div className="Customizations-edit-button">
+                        {order.ItemName && ( // Check if ItemName is not empty
+                          <React.Fragment>
+                            <div>
+                              <div className="Customizations-header">
+                                Customizations:
+                              </div>
+                              <div className="Customizations-items">
+                                {order.ItemCustomizations}
+                              </div>
+                            </div>
+                          </React.Fragment>
+                        )}
+                        {orderArray[0].OrderStatus ===
+                          "Order has not been placed yet" &&
+                          order.ItemName && (
+                            <Link
+                              to={`/EditOrder/${order.OrderNumber}/${order.id}`}
+                            >
+                              <button className="EditOrder">Edit</button>
+                            </Link>
+                          )}
+                      </div>
+                      {order.ItemComments && (
                         <React.Fragment>
-                          <div>
-                            <div className="Customizations-header">
-                              Customizations:
-                            </div>
-                            <div className="Customizations-items">
-                              {order.ItemCustomizations}
-                            </div>
+                          <div className="Comments-header">Comments:</div>
+                          <div className="Comments-items">
+                            {order.ItemComments}
                           </div>
                         </React.Fragment>
                       )}
-                      {orderArray[0].OrderStatus ===
-                        "Order has not been placed yet" &&
-                        order.ItemName && (
-                          <Link
-                            to={`/EditOrder/${order.OrderNumber}/${order.id}`}
-                          >
-                            <button className="EditOrder">Edit</button>
-                          </Link>
-                        )}
+                      {order.ItemName && (
+                        <React.Fragment>
+                          <span className="price-of-item">
+                            Price: ${order.ItemTotalPrice} (${order.ItemPrice} x{" "}
+                            {order.ItemTotalQuantity})
+                          </span>
+                        </React.Fragment>
+                      )}
                     </div>
-                    {order.ItemComments && (
-                      <React.Fragment>
-                        <div className="Comments-header">Comments:</div>
-                        <div className="Comments-items">
-                          {order.ItemComments}
-                        </div>
-                      </React.Fragment>
+                  ))}
+                  <div className="OrderAndPrice">
+                    {orderArray[0].OrderStatus ===
+                      "Order has not been placed yet" && (
+                      <button
+                        className="ConfirmOrderButton"
+                        onClick={() => ConfirmOrder(orderArray)}
+                      >
+                        Confirm Order
+                      </button>
                     )}
-                    {order.ItemName && (
-                      <React.Fragment>
-                        <span className="price-of-item">
-                          Price: ${order.ItemTotalPrice} (${order.ItemPrice} x{" "}
-                          {order.ItemTotalQuantity})
-                        </span>
-                      </React.Fragment>
-                    )}
+                    <div className="OrderTotalPrice">
+                      Total: {eval(`order${index + 1}Total`)}
+                    </div>{" "}
+                    {/* Accessing order total dynamically */}
                   </div>
-                ))}
-                <div className="OrderAndPrice">
-                  {orderArray[0].OrderStatus ===
-                    "Order has not been placed yet" && (
-                    <button
-                      className="ConfirmOrderButton"
-                      onClick={() => ConfirmOrder(orderArray)}
-                    >
-                      Confirm Order
-                    </button>
-                  )}
-                  <div className="OrderTotalPrice">
-                    Total: {eval(`order${index + 1}Total`)}
-                  </div>{" "}
-                  {/* Accessing order total dynamically */}
                 </div>
+              ))}
+
+              <div className="OrderTotalPrice">
+                Overall total: {TotalOrderPrice}
               </div>
-            ))}
-            <div className="OrderTotalPrice">
-              Overall total: {TotalOrderPrice}
             </div>
           </div>
+        )}
+        <div className="centered-content">
+          {orders.length === 0 && (
+            <div className="NoOrder">
+              <span>
+                No order yet! Your taste buds are still pondering. Give them a
+                nudge and let's create some delicious memories!
+              </span>
+              <br />
+              <span className="smallText">
+                Feeling lost? Hit "Call for Assistance" for culinary guidance.
+                We've got your back, and your taste buds!
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </>

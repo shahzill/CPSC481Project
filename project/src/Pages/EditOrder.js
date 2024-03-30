@@ -13,7 +13,6 @@ import "../Style/Navbar.css";
 import "../Style/ItemDetail.css";
 import { foodItems } from "../Data/FoodItems";
 import { addOns } from "../Data/FoodItems";
-import steakFries from "../Images/SteakFries.jpg";
 import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
 
 function EditOrderPage() {
@@ -197,7 +196,10 @@ function EditOrderPage() {
 
               {/* Placeholder for specific image*/}
 
-              <img src={steakFries} alt={specificFoodItem.Name} />
+              <img
+                src={specificFoodItem.ImageURL}
+                alt={specificFoodItem.Name}
+              />
 
               {/* Description */}
 

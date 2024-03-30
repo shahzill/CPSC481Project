@@ -3,12 +3,14 @@ import { useRef } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import "../Style/Navbar.css";
 import PopupNotification from "../Components/PopupNotification";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
   const navRef = useRef();
   const [navColor, setNavColor] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [showPopupDelete, setShowPopupDelete] = useState(false);
+  const location = useLocation();
 
   const changeBG = () => {
     if (window.scrollY >= 10) {
@@ -52,16 +54,34 @@ function Navbar() {
 
       <nav ref={navRef}>
         <div className="links">
-          <Link className="link" smooth to="/">
+          <Link
+            className={`link ${location.pathname === "/" ? "active" : ""}`}
+            smooth
+            to="/"
+          >
             Home
           </Link>
-          <Link className="link" smooth to="/Menu">
+          <Link
+            className={`link ${location.pathname === "/Menu" ? "active" : ""}`}
+            smooth
+            to="/Menu"
+          >
             Menu
           </Link>
-          <Link className="link" smooth to="/Order">
+          <Link
+            className={`link ${location.pathname === "/Order" ? "active" : ""}`}
+            smooth
+            to="/Order"
+          >
             Order
           </Link>
-          <Link className="link" smooth to="/Payment">
+          <Link
+            className={`link ${
+              location.pathname === "/Payment" ? "active" : ""
+            }`}
+            smooth
+            to="/Payment"
+          >
             Payment
           </Link>
           <Link className="link" smooth to="">

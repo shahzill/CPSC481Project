@@ -3,7 +3,6 @@ import Navbar from "../Components/Navbar";
 import "../Style/Navbar.css";
 import "../Style/Menu.css";
 import { foodItems } from "../Data/FoodItems";
-import steakFries from "../Images/SteakFries.jpg";
 import { Link } from "react-router-dom";
 import { HashLink as ScrollLink } from "react-router-hash-link";
 import { animateScroll as scroll } from "react-scroll";
@@ -231,7 +230,7 @@ function MenuPage() {
                       key={index}
                     >
                       <div className="menu-item-card" key={index}>
-                        <img src={steakFries} alt={item.Name} />
+                        <img src={item.ImageURL} alt={item.Name} />
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
@@ -257,7 +256,7 @@ function MenuPage() {
                       key={index}
                     >
                       <div className="menu-item-card" key={index}>
-                        <img src={steakFries} alt={item.Name} />
+                        <img src={item.ImageURL} alt={item.Name} />
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
@@ -283,7 +282,7 @@ function MenuPage() {
                       key={index}
                     >
                       <div className="menu-item-card" key={index}>
-                        <img src={steakFries} alt={item.Name} />
+                        <img src={item.ImageURL} alt={item.Name} />
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
@@ -309,7 +308,7 @@ function MenuPage() {
                       key={index}
                     >
                       <div className="menu-item-card" key={index}>
-                        <img src={steakFries} alt={item.Name} />
+                        <img src={item.ImageURL} alt={item.Name} />
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
@@ -335,7 +334,7 @@ function MenuPage() {
                       key={index}
                     >
                       <div className="menu-item-card" key={index}>
-                        <img src={steakFries} alt={item.Name} />
+                        <img src={item.ImageURL} alt={item.Name} />
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
@@ -361,7 +360,7 @@ function MenuPage() {
                       key={index}
                     >
                       <div className="menu-item-card" key={index}>
-                        <img src={steakFries} alt={item.Name} />
+                        <img src={item.ImageURL} alt={item.Name} />
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
@@ -387,7 +386,7 @@ function MenuPage() {
                       key={index}
                     >
                       <div className="menu-item-card" key={index}>
-                        <img src={steakFries} alt={item.Name} />
+                        <img src={item.ImageURL} alt={item.Name} />
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>
@@ -413,7 +412,7 @@ function MenuPage() {
                       key={index}
                     >
                       <div className="menu-item-card" key={index}>
-                        <img src={steakFries} alt={item.Name} />
+                        <img src={item.ImageURL} alt={item.Name} />
                         <div className="menu-item-details">
                           <h3>{item.Name}</h3>
                           <p>{item.Description}</p>

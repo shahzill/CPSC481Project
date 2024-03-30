@@ -156,4 +156,19 @@ margin-top: 5px; /* Add some space between icon and description */
     margin-left: auto; /* Push "Total" text to the right */
 }
 
+.centered-content {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    align-items: center;
+    text-align: center;
+    height: 75vh; /* Ensures that the content takes up the full height of the viewport */
+}
+
+.smallText{
+    font-size: 25px;
+    color: var(--main-color);
+}
+
 

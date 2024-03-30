@@ -8,6 +8,7 @@ export const foodItems = [
     Price: 3.99,
     Ingridients: "Tomatoes, onions, garlic",
     AddOns: "1,3,4",
+    ImageURL: require("../Images/TomatoSoup.jpg"),
     Key: "V, AF",
   },
   {
@@ -18,6 +19,7 @@ export const foodItems = [
     Price: 4.5,
     Ingridients: "Chicken, noodles, carrots, celery",
     AddOns: "1,6", // Fries, Baked Beans
+    ImageURL: require("../Images/ChickenNoodleSoup.jpg"),
     Key: "AF",
   },
   {
@@ -28,6 +30,7 @@ export const foodItems = [
     Price: 4.25,
     Ingridients: "Beans, pasta, tomatoes, vegetables",
     AddOns: "1,4", // Fries, Green Beans
+    ImageURL: require("../Images/MinestroneSoup.jpg"),
     Key: "V",
   },
   {
@@ -38,6 +41,7 @@ export const foodItems = [
     Price: 5.25,
     Ingridients: "Clams, potatoes, cream",
     AddOns: "1,6", // Fries, Baked Beans
+    ImageURL: require("../Images/ClamChowder.jpg"),
     Key: "",
   },
   {
@@ -48,6 +52,7 @@ export const foodItems = [
     Price: 4.75,
     Ingridients: "Onions, beef broth, cheese",
     AddOns: "1,3,4", // Fries, Cheese Bread, Green Beans
+    ImageURL: require("../Images/FrenchOnionSoup.jpg"),
     Key: "V, AF",
   },
   {
@@ -58,6 +63,7 @@ export const foodItems = [
     Price: 4.25,
     Ingridients: "Assorted vegetables, broth",
     AddOns: "1,3,4", // Fries, Cheese Bread, Green Beans
+    ImageURL: require("../Images/VegetableSoup.jpg"),
     Key: "V",
   },
   // Appetizers
@@ -69,6 +75,7 @@ export const foodItems = [
     Price: 6.99,
     Ingridients: "Mozzarella cheese, breadcrumbs",
     AddOns: "1,2",
+    ImageURL: require("../Images/MozzarellaSticks.jpg"),
     Key: "",
   },
   {
@@ -79,6 +86,7 @@ export const foodItems = [
     Price: 5.99,
     Ingridients: "Chicken wings, hot sauce",
     AddOns: "15,17,1,3",
+    ImageURL: require("../Images/BuffaloWings.jpg"),
     Key: "AF",
   },
   {
@@ -89,6 +97,7 @@ export const foodItems = [
     Price: 5.99,
     Ingridients: "Tortilla chips, cheese, salsa, guacamole",
     AddOns: "5,7,15,17",
+    ImageURL: require("../Images/Nachos.jpg"),
     Key: "AF",
   },
   {
@@ -99,6 +108,7 @@ export const foodItems = [
     Price: 7.99,
     Ingridients: "Baguette, tomatoes, garlic, basil",
     AddOns: "11,12",
+    ImageURL: require("../Images/Bruschetta.jpg"),
     Key: "",
   },
   {
@@ -109,6 +119,7 @@ export const foodItems = [
     Price: 7.75,
     Ingridients: "Spinach, artichokes, cream cheese",
     AddOns: "1,3",
+    ImageURL: require("../Images/SpinachArtichokeDip.jpg"),
     Key: "AF",
   },
   {
@@ -119,6 +130,7 @@ export const foodItems = [
     Price: 8.25,
     Ingridients: "Mushrooms, cheese, breadcrumbs",
     AddOns: "7,13,14,16",
+    ImageURL: require("../Images/StuffedMushrooms.jpg"),
     Key: "V, AF",
   },
   {
@@ -130,6 +142,7 @@ export const foodItems = [
     Price: 8.99,
     Ingridients: "Romaine lettuce, croutons, Parmesan cheese",
     AddOns: "22,19",
+    ImageURL: require("../Images/CaesarSalad.jpg"),
     Key: "V, AF",
   },
   {
@@ -141,6 +154,7 @@ export const foodItems = [
     Price: 7.5,
     Ingridients: "Tomatoes, cucumbers, olives, feta cheese",
     AddOns: "22,19,21",
+    ImageURL: require("../Images/GreekSalad.jpg"),
     Key: "V< AF",
   },
   {
@@ -152,6 +166,7 @@ export const foodItems = [
     Price: 9.25,
     Ingridients: "Tomatoes, mozzarella cheese, basil",
     AddOns: "23,20,21",
+    ImageURL: require("../Images/CapreseSalad.jpg"),
     Key: "AF",
   },
   {
@@ -163,6 +178,7 @@ export const foodItems = [
     Price: 10.5,
     Ingridients: "Mixed greens, avocado, bacon, blue cheese",
     AddOns: "21,22,23",
+    ImageURL: require("../Images/CobbSalad.jpg"),
     Key: "AF",
   },
   {
@@ -174,6 +190,7 @@ export const foodItems = [
     Price: 8.75,
     Ingridients: "Spinach, strawberries, almonds, feta cheese",
     AddOns: "18,23,22",
+    ImageURL: require("../Images/SpinachSalad.jpg"),
     Key: "V, AF",
   },
   {
@@ -185,6 +202,7 @@ export const foodItems = [
     Price: 7.99,
     Ingridients: "Apples, grapes, walnuts, celery",
     AddOns: "22,19",
+    ImageURL: require("../Images/WaldorfSalad.jpeg"),
     Key: "V, AF",
   },
   {
@@ -195,6 +213,7 @@ export const foodItems = [
     Price: 14.99,
     Ingridients: "Salmon fillet, lemon, butter",
     AddOns: "1,2,3,7,11",
+    ImageURL: require("../Images/GrilledSalmon.jpg"),
     Key: "AF",
   },
   {
@@ -205,6 +224,7 @@ export const foodItems = [
     Price: 12.5,
     Ingridients: "Cod fillets, batter, potatoes",
     AddOns: "15,17,10,9",
+    ImageURL: require("../Images/FishandChips.jpg"),
     Key: "AF",
   },
   {
@@ -215,6 +235,7 @@ export const foodItems = [
     Price: 13.75,
     Ingridients: "Shrimp, garlic, butter, white wine",
     AddOns: "3,1,2",
+    ImageURL: require("../Images/ShrimpScampi.jpg"),
     Key: "",
   },
   {
@@ -225,6 +246,7 @@ export const foodItems = [
     Price: 16.5,
     Ingridients: "Swordfish steak, lemon, herbs",
     AddOns: "1,2,3,13",
+    ImageURL: require("../Images/GrilledSwordfish.jpg"),
     Key: "",
   },
   {
@@ -235,6 +257,7 @@ export const foodItems = [
     Price: 22.99,
     Ingridients: "Lobster tail, butter",
     AddOns: "11,12,13,14",
+    ImageURL: require("../Images/LobsterTail.jpg"),
     Key: "AF",
   },
   {
@@ -245,6 +268,7 @@ export const foodItems = [
     Price: 15.75,
     Ingridients: "Crab meat, breadcrumbs, spices",
     AddOns: "8,5,4",
+    ImageURL: require("../Images/CrabCakes.jpg"),
     Key: "",
   },
   {
@@ -255,6 +279,7 @@ export const foodItems = [
     Price: 29.99,
     Ingridients: "Beef tenderloin, seasoning",
     AddOns: "2,4,12,14",
+    ImageURL: require("../Images/FiletMignon.jpg"),
     Key: "",
   },
   {
@@ -265,6 +290,7 @@ export const foodItems = [
     Price: 32.5,
     Ingridients: "Arborio rice, lobster meat, Parmesan cheese",
     AddOns: "13,12,15,17",
+    ImageURL: require("../Images/LobsterRisotto.jpg"),
     Key: "",
   },
   {
@@ -275,6 +301,7 @@ export const foodItems = [
     Price: 24.99,
     Ingridients: "Mushrooms, spinach, puff pastry",
     AddOns: "20,12,10",
+    ImageURL: require("../Images/VegetableWellington.jpg"),
     Key: "",
   },
   // Add more main courses
@@ -287,6 +314,7 @@ export const foodItems = [
     Price: 6.5,
     Ingridients: "Lemon juice, sugar",
     AddOns: "25",
+    ImageURL: require("../Images/LemonSorbet.jpg"),
     Key: "",
   },
   {
@@ -297,6 +325,7 @@ export const foodItems = [
     Price: 7.25,
     Ingridients: "25,26",
     AddOns: "",
+    ImageURL: require("../Images/CucumberMintGranita.jpg"),
     Key: "",
   },
   {
@@ -307,6 +336,7 @@ export const foodItems = [
     Price: 6.99,
     Ingridients: "24,25,26",
     AddOns: "",
+    ImageURL: require("../Images/BloodOrangeSorbet.jpg"),
     Key: "",
   },
   // Desserts
@@ -318,6 +348,7 @@ export const foodItems = [
     Price: 8.99,
     Ingridients: "Egg yolks, cream, vanilla bean",
     AddOns: "27",
+    ImageURL: require("../Images/CremeBrulee.jpg"),
     Key: "",
   },
   {
@@ -329,6 +360,7 @@ export const foodItems = [
     Price: 10.5,
     Ingridients: "Ladyfingers, coffee, mascarpone cheese",
     AddOns: "28,29",
+    ImageURL: require("../Images/Tiramisu.jpg"),
     Key: "",
   },
   {
@@ -339,6 +371,7 @@ export const foodItems = [
     Price: 11.75,
     Ingridients: "Chocolate, cream, butter",
     AddOns: "31,30,29",
+    ImageURL: require("../Images/ChocolateTruffleCake.jpg"),
     Key: "V, AF",
   },
   {
@@ -349,6 +382,7 @@ export const foodItems = [
     Price: 9.25,
     Ingridients: "Key lime juice, condensed milk",
     AddOns: "31,27,28",
+    ImageURL: require("../Images/KeyLimePie.jpg"),
     Key: "AF",
   },
   {
@@ -359,6 +393,7 @@ export const foodItems = [
     Price: 10.99,
     Ingridients: "Apples, pastry dough",
     AddOns: "27",
+    ImageURL: require("../Images/AppleTart.jpg"),
     Key: "V, AF",
   },
   // Drinks
@@ -370,6 +405,7 @@ export const foodItems = [
     Price: 12.99,
     Ingredients: "Cabernet Sauvignon grapes",
     AddOns: "34",
+    ImageURL: require("../Images/CabernetSauvignon.jpg"),
     Key: "",
   },
   {
@@ -380,6 +416,7 @@ export const foodItems = [
     Price: 10.99,
     Ingredients: "Chardonnay grapes",
     AddOns: "35,32",
+    ImageURL: require("../Images/Chardonnay.jpg"),
     Key: "",
   },
   {
@@ -390,6 +427,7 @@ export const foodItems = [
     Price: 14.5,
     Ingridients: "Bourbon, sugar, bitters",
     AddOns: "34,35",
+    ImageURL: require("../Images/OldFashioned.jpg"),
     Key: "",
   },
   {
@@ -400,6 +438,7 @@ export const foodItems = [
     Price: 13.75,
     Ingridients: "Gin, vermouth, Campari",
     AddOns: "36",
+    ImageURL: require("../Images/Negroni.jpg"),
     Key: "",
   },
   {
@@ -411,6 +450,7 @@ export const foodItems = [
     Price: 11.99,
     Ingridients: "Rum, mint leaves, lime, soda water",
     AddOns: "34,35",
+    ImageURL: require("../Images/Mojito.jpg"),
     Key: "",
   },
   {
@@ -421,6 +461,7 @@ export const foodItems = [
     Price: 12.25,
     Ingridients: "Vodka, cranberry juice, lime, triple sec",
     AddOns: "33,32",
+    ImageURL: require("../Images/Cosmopolitan.jpg"),
     Key: "",
   },
   {
@@ -431,6 +472,7 @@ export const foodItems = [
     Price: 4.5,
     Ingridients: "Pure spakrling water",
     AddOns: "34",
+    ImageURL: require("../Images/SparklingWater.jpg"),
     Key: "",
   },
 ];
