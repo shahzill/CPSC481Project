@@ -100,16 +100,19 @@ function EditOrderPage() {
   };
 
   function handleCheckboxChange(event) {
-    console.log("1 ", sidesToAdd);
     const { checked, value } = event.target;
+    console.log("NOW IT SHOULD BE ", checked);
     // Update sidesToAdd based on the checkbox state
     if (checked) {
       // If the checkbox is checked, add its value to sidesToAdd
       setSidesToAdd((prevSides) => [...prevSides, value]);
     } else {
       // If the checkbox is unchecked, remove its value from sidesToAdd
-      setSidesToAdd((prevSides) => prevSides.filter((side) => side !== value));
+      setSidesToAdd((prevSides) =>
+        prevSides.filter((side) => side.trim() !== value.trim())
+      );
     }
+    console.log("1 ", sidesToAdd);
   }
   useEffect(() => {
     // Log sidesToAdd whenever it changes
@@ -119,7 +122,13 @@ function EditOrderPage() {
     console.log("2 ", sidesToAdd);
     const lowerCaseAddonName = addonName.toLowerCase().trim(); // Convert the addon name to lowercase
     const itemCustomizationsArray = sidesToAdd.map((side) =>
-      side.toLowerCase()
+      side.toLowerCase().trim()
+    );
+    console.log(
+      "returning ",
+      itemCustomizationsArray.includes(lowerCaseAddonName),
+      " for ",
+      addonName
     );
     return itemCustomizationsArray.includes(lowerCaseAddonName); // Check if the lowercase addonName is included in the array
   };
