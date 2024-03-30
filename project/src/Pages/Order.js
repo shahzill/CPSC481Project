@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import PopupNotification from "../Components/PopupNotification";
+import ConfirmationPopup from "../Components/ConfirmationPopup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
@@ -29,6 +30,9 @@ function OrderPage() {
   const [TotalOrderPrice, setTotalOrderPrice] = useState();
   const [showPopup, setShowPopup] = useState(false);
   const [showPopupDelete, setShowPopupDelete] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
+  const [orderArray, setOrderArray] = useState([]);
 
   const confirmationMsg = {
     text: "Order Confirmed",
@@ -106,47 +110,8 @@ function OrderPage() {
   }
 
   const ConfirmOrder = (orderArray) => {
-    const orderNumber = orderArray[0].OrderNumber;
-    const orderToUpdate = orders.find(
-      (order) => order[0].OrderNumber === orderNumber
-    );
-    if (orderToUpdate) {
-      orderToUpdate.forEach((order) => {
-        order.OrderStatus = "Order has been placed";
-        order.OrderStatusTotal += " Order has been placed";
-      });
-    }
-    setOrders([...orders]);
-    setShowPopup(true);
-
-    // Set timeout to update status after 1 minute
-    setTimeout(() => {
-      const updatedStatus = "Order has been confirmed"; // Simulated update
-      orderToUpdate.forEach((order) => {
-        order.OrderStatus = updatedStatus;
-        order.OrderStatusTotal += ` ${updatedStatus}`;
-      });
-      setOrders([...orders]);
-      localStorage.setItem(
-        `popupMessage`,
-        JSON.stringify(`Order ${orderNumber} has been confirmed`)
-      );
-
-      // Set another timer after the first one runs out
-      setTimeout(() => {
-        // Your code to be executed after the first timer
-        orderToUpdate.forEach((order) => {
-          order.OrderStatus = "Order is being prepared";
-          order.OrderStatusTotal += `  Order is being prepared`;
-        });
-        setOrders([...orders]);
-        localStorage.setItem(
-          `popupMessage`,
-          JSON.stringify(`Order ${orderNumber} is being prepared`)
-        );
-      }, 20000); // 20 seconds after the first timer ends
-    }, 20000); // 20 seconds
-    // Store order status in localStorage for automatic updates
+    setOrderArray(orderArray);
+    setShowConfirmation(true);
   };
 
   function decrement(orderId, orderNumber) {
@@ -215,6 +180,56 @@ function OrderPage() {
     setShowPopupDelete(false);
   };
 
+  const handleConfirm = () => {
+    // Add logic to confirm the order
+    const orderNumber = orderArray[0].OrderNumber;
+    const orderToUpdate = orders.find(
+      (order) => order[0].OrderNumber === orderNumber
+    );
+    if (orderToUpdate) {
+      orderToUpdate.forEach((order) => {
+        order.OrderStatus = "Order has been placed";
+        order.OrderStatusTotal += " Order has been placed";
+      });
+    }
+    setOrders([...orders]);
+    setShowPopup(true);
+
+    // Set timeout to update status after 1 minute
+    setTimeout(() => {
+      const updatedStatus = "Order has been confirmed"; // Simulated update
+      orderToUpdate.forEach((order) => {
+        order.OrderStatus = updatedStatus;
+        order.OrderStatusTotal += ` ${updatedStatus}`;
+      });
+      setOrders([...orders]);
+      localStorage.setItem(
+        `popupMessage`,
+        JSON.stringify(`Order ${orderNumber} has been confirmed`)
+      );
+
+      // Set another timer after the first one runs out
+      setTimeout(() => {
+        // Your code to be executed after the first timer
+        orderToUpdate.forEach((order) => {
+          order.OrderStatus = "Order is being prepared";
+          order.OrderStatusTotal += `  Order is being prepared`;
+        });
+        setOrders([...orders]);
+        localStorage.setItem(
+          `popupMessage`,
+          JSON.stringify(`Order ${orderNumber} is being prepared`)
+        );
+      }, 20000); // 20 seconds after the first timer ends
+    }, 20000); // 20 seconds
+    // Store order status in localStorage for automatic updates
+    setShowConfirmation(false); // Close the confirmation popup after confirmation
+  };
+
+  const handleCancel = () => {
+    setShowConfirmation(false); // Close the confirmation popup if cancelled
+  };
+
   return (
     <>
       <div className="black-background">
@@ -233,6 +248,13 @@ function OrderPage() {
           showPopup={showPopupDelete}
           closePopup={closePopup}
         />
+        {showConfirmation && (
+          <ConfirmationPopup
+            message="Are you sure you want to confirm this order?"
+            onConfirm={handleConfirm}
+            onCancel={handleCancel}
+          />
+        )}
         {orders.length > 0 && (
           <div className="contentOrderPage">
             <div className="OrderStatusSide">
@@ -421,8 +443,8 @@ function OrderPage() {
             </div>
           </div>
         )}
-        <div className="centered-content">
-          {orders.length === 0 && (
+        {orders.length === 0 && (
+          <div className="centered-content">
             <div className="NoOrder">
               <span>
                 No order yet! Your taste buds are still pondering. Give them a
@@ -434,8 +456,8 @@ function OrderPage() {
                 We've got your back, and your taste buds!
               </span>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </>
   );

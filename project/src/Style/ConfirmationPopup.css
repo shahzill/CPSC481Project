@@ -1,0 +1,33 @@
+.confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-size: 30px;
+  }
+  
+  .confirmation-popup p {
+    margin-bottom: 15px;
+  }
+  
+  .confirmation-popup button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--button-color);
+    color: white;
+    font-size: 25px;
+  }
+  
+  .confirmation-popup button:hover {
+    background-color: var(--main-color);
+  }
+  
