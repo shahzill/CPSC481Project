@@ -76,11 +76,14 @@ function OrderPage() {
       newOrders.push(orderArray);
 
       const validItems = orderArray.filter((order) => order.ItemName !== "");
-
+      let doPop = true;
       // Calculate total price for valid items
       validItems.forEach((order) => {
         totalOrderPrice += parseFloat(order.ItemTotalPrice);
         TotalPriceCalc += parseFloat(order.ItemTotalPrice);
+        if (order.ItemName != "") {
+          doPop = false;
+        }
       });
 
       // Set total order price using the appropriate state setter from orderTotalSetters array
@@ -92,7 +95,7 @@ function OrderPage() {
       ) {
         foundOrder = true;
 
-        if (orderNotPlaced.ItemName === "") {
+        if (doPop) {
           newOrders.pop(orderArray);
         }
         break;

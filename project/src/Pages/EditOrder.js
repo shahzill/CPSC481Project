@@ -48,9 +48,6 @@ function EditOrderPage() {
       const orderRetrieved = OrderArray.find(
         (order) => order.id === parseInt(ItemId)
       );
-      console.log("Item id = ", ItemId);
-      console.log("Order id = ", OrderId);
-      console.log("FoodItem = ", orderRetrieved);
       if (
         orderRetrieved.OrderNumber === parseInt(OrderId) &&
         orderRetrieved.id === parseInt(ItemId)
@@ -72,21 +69,21 @@ function EditOrderPage() {
     setSides(sideArray);
     setQuantity(orderRetrievedFinal.ItemTotalQuantity);
     setPrice(orderRetrievedFinal.ItemTotalPrice);
+    // Update sidesToAdd based on initial values
+    const initialSides = orderRetrievedFinal.ItemCustomizations.split(",");
+    setSidesToAdd(initialSides);
+
     setIsLoading(false);
   }, []);
   const handleAddToOrder = () => {
     const orderArrays = [Order1, Order2, Order3, Order4, Order5];
-    console.log("1");
     for (let i = 0; i < orderArrays.length; i++) {
-      console.log("2");
       const orderArray = orderArrays[i];
       if (orderArray[1].OrderNumber === parseInt(OrderId)) {
-        console.log("3");
         for (let j = 0; j < orderArray.length; j++) {
           const OrderToCheck = orderArray[j];
-          console.log("4");
+
           if (OrderToCheck.id === parseInt(ItemId)) {
-            console.log("5");
             OrderToCheck.ItemName = specificFoodItem.Name;
             OrderToCheck.ItemTotalQuantity = quantity;
             OrderToCheck.ItemPrice = specificFoodItem.Price;
@@ -101,31 +98,29 @@ function EditOrderPage() {
     setAddedToOrder(true);
     setShowPopup(true);
   };
+
   function handleCheckboxChange(event) {
+    console.log("1 ", sidesToAdd);
     const { checked, value } = event.target;
     // Update sidesToAdd based on the checkbox state
-    setSidesToAdd((prevSides) =>
-      checked
-        ? [...prevSides, value]
-        : prevSides.filter((side) => side !== value)
-    );
-
-    // Update specificOrder.ItemCustomizations based on the updated sidesToAdd
-    setSpecificOrder((prevOrder) => ({
-      ...prevOrder,
-      ItemCustomizations: checked
-        ? [...prevOrder.ItemCustomizations.split(","), value].join(",")
-        : prevOrder.ItemCustomizations.split(",")
-            .filter((side) => side !== value)
-            .join(","),
-    }));
+    if (checked) {
+      // If the checkbox is checked, add its value to sidesToAdd
+      setSidesToAdd((prevSides) => [...prevSides, value]);
+    } else {
+      // If the checkbox is unchecked, remove its value from sidesToAdd
+      setSidesToAdd((prevSides) => prevSides.filter((side) => side !== value));
+    }
   }
-
+  useEffect(() => {
+    // Log sidesToAdd whenever it changes
+    console.log("sidesToAdd changed:", sidesToAdd);
+  }, [sidesToAdd]);
   const checkForSides = (addonName) => {
-    const lowerCaseAddonName = addonName.toLowerCase(); // Convert the addon name to lowercase
-    const itemCustomizationsArray = specificOrder.ItemCustomizations.split(
-      ","
-    ).map((item) => item.trim().toLowerCase()); // Split the string into an array and convert each item to lowercase
+    console.log("2 ", sidesToAdd);
+    const lowerCaseAddonName = addonName.toLowerCase().trim(); // Convert the addon name to lowercase
+    const itemCustomizationsArray = sidesToAdd.map((side) =>
+      side.toLowerCase()
+    );
     return itemCustomizationsArray.includes(lowerCaseAddonName); // Check if the lowercase addonName is included in the array
   };
   const closePopup = () => {
