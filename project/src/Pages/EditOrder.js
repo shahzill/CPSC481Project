@@ -20,6 +20,7 @@ function EditOrderPage() {
   let { OrderId } = useParams(); // Access the ID parameter from the URL
   let { ItemId } = useParams(); // Access the ID parameter from the URL
   const [specificFoodItem, setSpecificFoodItem] = useState();
+  const [specificOrder, setSpecificOrder] = useState();
   const [orderNumberToFill, setOrdernumber] = useState();
   const [sidesToAdd, setSidesToAdd] = useState([]);
   const [quantity, setQuantity] = useState(1);
@@ -32,7 +33,7 @@ function EditOrderPage() {
   // Successfully added button logic:
 
   const confirmationMsg = {
-    text: "Item added! Go to orders tab to confirm your order",
+    text: "Item updated! Go to orders tab to confirm your order",
     theme: {
       backgroundColor: "green",
       color: "white",
@@ -62,28 +63,36 @@ function EditOrderPage() {
         setSpecificFoodItem(foodItem);
       }
     }
+    setSpecificOrder(orderRetrievedFinal);
     setSpecialInstructions(orderRetrievedFinal.ItemComments);
     const sidesIdArray = foodItem.AddOns.split(",");
     const sideArray = addOns.filter((addon) => {
       return sidesIdArray.includes(addon.id.toString());
     });
     setSides(sideArray);
-    setPrice(foodItem.Price);
+    setQuantity(orderRetrievedFinal.ItemTotalQuantity);
+    setPrice(orderRetrievedFinal.ItemTotalPrice);
     setIsLoading(false);
   }, []);
   const handleAddToOrder = () => {
     const orderArrays = [Order1, Order2, Order3, Order4, Order5];
+    console.log("1");
     for (let i = 0; i < orderArrays.length; i++) {
+      console.log("2");
       const orderArray = orderArrays[i];
-      if (orderArray[1].OrderNumber === orderNumberToFill) {
+      if (orderArray[1].OrderNumber === parseInt(OrderId)) {
+        console.log("3");
         for (let j = 0; j < orderArray.length; j++) {
           const OrderToCheck = orderArray[j];
-          if (OrderToCheck.ItemName === "") {
+          console.log("4");
+          if (OrderToCheck.id === parseInt(ItemId)) {
+            console.log("5");
             OrderToCheck.ItemName = specificFoodItem.Name;
             OrderToCheck.ItemTotalQuantity = quantity;
             OrderToCheck.ItemPrice = specificFoodItem.Price;
             OrderToCheck.ItemTotalPrice = price;
             OrderToCheck.ItemCustomizations = sidesToAdd.join(", ");
+            OrderToCheck.ItemComments = specialInstructions;
             break;
           }
         }
@@ -94,14 +103,31 @@ function EditOrderPage() {
   };
   function handleCheckboxChange(event) {
     const { checked, value } = event.target;
-    if (checked) {
-      // If the checkbox is checked, add its value to sidesToAdd
-      setSidesToAdd((prevSides) => [...prevSides, value]);
-    } else {
-      // If the checkbox is unchecked, remove its value from sidesToAdd
-      setSidesToAdd((prevSides) => prevSides.filter((side) => side !== value));
-    }
+    // Update sidesToAdd based on the checkbox state
+    setSidesToAdd((prevSides) =>
+      checked
+        ? [...prevSides, value]
+        : prevSides.filter((side) => side !== value)
+    );
+
+    // Update specificOrder.ItemCustomizations based on the updated sidesToAdd
+    setSpecificOrder((prevOrder) => ({
+      ...prevOrder,
+      ItemCustomizations: checked
+        ? [...prevOrder.ItemCustomizations.split(","), value].join(",")
+        : prevOrder.ItemCustomizations.split(",")
+            .filter((side) => side !== value)
+            .join(","),
+    }));
   }
+
+  const checkForSides = (addonName) => {
+    const lowerCaseAddonName = addonName.toLowerCase(); // Convert the addon name to lowercase
+    const itemCustomizationsArray = specificOrder.ItemCustomizations.split(
+      ","
+    ).map((item) => item.trim().toLowerCase()); // Split the string into an array and convert each item to lowercase
+    return itemCustomizationsArray.includes(lowerCaseAddonName); // Check if the lowercase addonName is included in the array
+  };
   const closePopup = () => {
     setShowPopup(false);
   };
@@ -127,6 +153,10 @@ function EditOrderPage() {
     // Perform arithmetic operation and format the result to two decimal places
     const newPrice = priceAsNumber + foodItemPriceAsNumber;
     setPrice(newPrice.toFixed(2));
+  };
+
+  const handleTextareaChange = (event) => {
+    setSpecialInstructions(event.target.value);
   };
 
   return (
@@ -216,6 +246,7 @@ function EditOrderPage() {
                         value={addon.Name}
                         className="bigger-checkbox"
                         onChange={handleCheckboxChange}
+                        checked={checkForSides(addon.Name)}
                       />
                       <label htmlFor={addon.Name} className="addon-content">
                         {addon.Name}
@@ -229,8 +260,9 @@ function EditOrderPage() {
                   <textarea
                     id="comments"
                     name="comments"
-                    value={specialInstructions}
+                    value={specialInstructions} // Bind the value of the textarea to the 'comments' state
                     placeholder="Add special instructions..."
+                    onChange={handleTextareaChange} // Call handleTextareaChange function on change
                   ></textarea>
                 </div>
               </div>
