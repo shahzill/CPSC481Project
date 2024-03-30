@@ -300,7 +300,7 @@ function EditOrderPage() {
                 <div>
                   {!addedToOrder && (
                     <button className="add-to-order" onClick={handleAddToOrder}>
-                      Add to Order
+                      Update Order
                     </button>
                   )}
                 </div>
