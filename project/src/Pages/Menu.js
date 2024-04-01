@@ -231,214 +231,233 @@ function MenuPage() {
               </div>
             </div>
             <div className="menu-items">
-              <div className="food-items-courses">
-                <div id="Soups" className="food-items-courses-header">
-                  Soups
-                </div>
-                <div className="food-items-courses-items">
-                  {Soups.map((item, index) => (
-                    <Link
-                      className="food-link"
-                      to={`/ItemDetail/${item.id}`}
-                      key={index}
-                    >
-                      <div className="menu-item-card" key={index}>
-                        <img src={item.ImageURL} alt={item.Name} />
-                        <div className="menu-item-details">
-                          <h3>{item.Name}</h3>
-                          <p>{item.Description}</p>
-                          <div className="price-key">
-                            <p>Price: ${item.Price}</p>
-                            <p>{item.Key}</p>
+              {Soups.length > 0 && (
+                <div className="food-items-courses">
+                  <div id="Soups" className="food-items-courses-header">
+                    Soups
+                  </div>
+                  <div className="food-items-courses-items">
+                    {Soups.map((item, index) => (
+                      <Link
+                        className="food-link"
+                        to={`/ItemDetail/${item.id}`}
+                        key={index}
+                      >
+                        <div className="menu-item-card" key={index}>
+                          <img src={item.ImageURL} alt={item.Name} />
+                          <div className="menu-item-details">
+                            <h3>{item.Name}</h3>
+                            <p>{item.Description}</p>
+                            <div className="price-key">
+                              <p>Price: ${item.Price}</p>
+                              <p>{item.Key}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="food-items-courses">
-                <div id="Appetizers" className="food-items-courses-header">
-                  Appetizers
-                </div>
-                <div className="food-items-courses-items">
-                  {Appetizers.map((item, index) => (
-                    <Link
-                      className="food-link"
-                      to={`/ItemDetail/${item.id}`}
-                      key={index}
-                    >
-                      <div className="menu-item-card" key={index}>
-                        <img src={item.ImageURL} alt={item.Name} />
-                        <div className="menu-item-details">
-                          <h3>{item.Name}</h3>
-                          <p>{item.Description}</p>
-                          <div className="price-key">
-                            <p>Price: ${item.Price}</p>
-                            <p>{item.Key}</p>
+              )}
+              {Appetizers.length > 0 && (
+                <div className="food-items-courses">
+                  <div id="Appetizers" className="food-items-courses-header">
+                    Appetizers
+                  </div>
+                  <div className="food-items-courses-items">
+                    {Appetizers.map((item, index) => (
+                      <Link
+                        className="food-link"
+                        to={`/ItemDetail/${item.id}`}
+                        key={index}
+                      >
+                        <div className="menu-item-card" key={index}>
+                          <img src={item.ImageURL} alt={item.Name} />
+                          <div className="menu-item-details">
+                            <h3>{item.Name}</h3>
+                            <p>{item.Description}</p>
+                            <div className="price-key">
+                              <p>Price: ${item.Price}</p>
+                              <p>{item.Key}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="food-items-courses">
-                <div id="Salad" className="food-items-courses-header">
-                  Salad
-                </div>
-                <div className="food-items-courses-items">
-                  {Salad.map((item, index) => (
-                    <Link
-                      className="food-link"
-                      to={`/ItemDetail/${item.id}`}
-                      key={index}
-                    >
-                      <div className="menu-item-card" key={index}>
-                        <img src={item.ImageURL} alt={item.Name} />
-                        <div className="menu-item-details">
-                          <h3>{item.Name}</h3>
-                          <p>{item.Description}</p>
-                          <div className="price-key">
-                            <p>Price: ${item.Price}</p>
-                            <p>{item.Key}</p>
+              )}
+              {Salad.length > 0 && (
+                <div className="food-items-courses">
+                  <div id="Salad" className="food-items-courses-header">
+                    Salad
+                  </div>
+                  <div className="food-items-courses-items">
+                    {Salad.map((item, index) => (
+                      <Link
+                        className="food-link"
+                        to={`/ItemDetail/${item.id}`}
+                        key={index}
+                      >
+                        <div className="menu-item-card" key={index}>
+                          <img src={item.ImageURL} alt={item.Name} />
+                          <div className="menu-item-details">
+                            <h3>{item.Name}</h3>
+                            <p>{item.Description}</p>
+                            <div className="price-key">
+                              <p>Price: ${item.Price}</p>
+                              <p>{item.Key}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="food-items-courses">
-                <div id="fish" className="food-items-courses-header">
-                  Fish
-                </div>
-                <div className="food-items-courses-items">
-                  {Fish.map((item, index) => (
-                    <Link
-                      className="food-link"
-                      to={`/ItemDetail/${item.id}`}
-                      key={index}
-                    >
-                      <div className="menu-item-card" key={index}>
-                        <img src={item.ImageURL} alt={item.Name} />
-                        <div className="menu-item-details">
-                          <h3>{item.Name}</h3>
-                          <p>{item.Description}</p>
-                          <div className="price-key">
-                            <p>Price: ${item.Price}</p>
-                            <p>{item.Key}</p>
+              )}
+              {Fish.length > 0 && (
+                <div className="food-items-courses">
+                  <div id="fish" className="food-items-courses-header">
+                    Fish
+                  </div>
+                  <div className="food-items-courses-items">
+                    {Fish.map((item, index) => (
+                      <Link
+                        className="food-link"
+                        to={`/ItemDetail/${item.id}`}
+                        key={index}
+                      >
+                        <div className="menu-item-card" key={index}>
+                          <img src={item.ImageURL} alt={item.Name} />
+                          <div className="menu-item-details">
+                            <h3>{item.Name}</h3>
+                            <p>{item.Description}</p>
+                            <div className="price-key">
+                              <p>Price: ${item.Price}</p>
+                              <p>{item.Key}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="food-items-courses">
-                <div id="MainCourse" className="food-items-courses-header">
-                  Main Course
-                </div>
-                <div className="food-items-courses-items">
-                  {MainCourse.map((item, index) => (
-                    <Link
-                      className="food-link"
-                      to={`/ItemDetail/${item.id}`}
-                      key={index}
-                    >
-                      <div className="menu-item-card" key={index}>
-                        <img src={item.ImageURL} alt={item.Name} />
-                        <div className="menu-item-details">
-                          <h3>{item.Name}</h3>
-                          <p>{item.Description}</p>
-                          <div className="price-key">
-                            <p>Price: ${item.Price}</p>
-                            <p>{item.Key}</p>
+              )}
+              {MainCourse.length > 0 && (
+                <div className="food-items-courses">
+                  <div id="MainCourse" className="food-items-courses-header">
+                    Main Course
+                  </div>
+                  <div className="food-items-courses-items">
+                    {MainCourse.map((item, index) => (
+                      <Link
+                        className="food-link"
+                        to={`/ItemDetail/${item.id}`}
+                        key={index}
+                      >
+                        <div className="menu-item-card" key={index}>
+                          <img src={item.ImageURL} alt={item.Name} />
+                          <div className="menu-item-details">
+                            <h3>{item.Name}</h3>
+                            <p>{item.Description}</p>
+                            <div className="price-key">
+                              <p>Price: ${item.Price}</p>
+                              <p>{item.Key}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="food-items-courses">
-                <div id="PalateCleanser" className="food-items-courses-header">
-                  Palate Cleanser
-                </div>
-                <div className="food-items-courses-items">
-                  {PalateCleasner.map((item, index) => (
-                    <Link
-                      className="food-link"
-                      to={`/ItemDetail/${item.id}`}
-                      key={index}
-                    >
-                      <div className="menu-item-card" key={index}>
-                        <img src={item.ImageURL} alt={item.Name} />
-                        <div className="menu-item-details">
-                          <h3>{item.Name}</h3>
-                          <p>{item.Description}</p>
-                          <div className="price-key">
-                            <p>Price: ${item.Price}</p>
-                            <p>{item.Key}</p>
+              )}
+              {PalateCleasner.length > 0 && (
+                <div className="food-items-courses">
+                  <div
+                    id="PalateCleanser"
+                    className="food-items-courses-header"
+                  >
+                    Palate Cleanser
+                  </div>
+                  <div className="food-items-courses-items">
+                    {PalateCleasner.map((item, index) => (
+                      <Link
+                        className="food-link"
+                        to={`/ItemDetail/${item.id}`}
+                        key={index}
+                      >
+                        <div className="menu-item-card" key={index}>
+                          <img src={item.ImageURL} alt={item.Name} />
+                          <div className="menu-item-details">
+                            <h3>{item.Name}</h3>
+                            <p>{item.Description}</p>
+                            <div className="price-key">
+                              <p>Price: ${item.Price}</p>
+                              <p>{item.Key}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="food-items-courses">
-                <div id="Desserts" className="food-items-courses-header">
-                  Desserts
-                </div>
-                <div className="food-items-courses-items">
-                  {Dessert.map((item, index) => (
-                    <Link
-                      className="food-link"
-                      to={`/ItemDetail/${item.id}`}
-                      key={index}
-                    >
-                      <div className="menu-item-card" key={index}>
-                        <img src={item.ImageURL} alt={item.Name} />
-                        <div className="menu-item-details">
-                          <h3>{item.Name}</h3>
-                          <p>{item.Description}</p>
-                          <div className="price-key">
-                            <p>Price: ${item.Price}</p>
-                            <p>{item.Key}</p>
+              )}
+              {Dessert.length > 0 && (
+                <div className="food-items-courses">
+                  <div id="Desserts" className="food-items-courses-header">
+                    Desserts
+                  </div>
+                  <div className="food-items-courses-items">
+                    {Dessert.map((item, index) => (
+                      <Link
+                        className="food-link"
+                        to={`/ItemDetail/${item.id}`}
+                        key={index}
+                      >
+                        <div className="menu-item-card" key={index}>
+                          <img src={item.ImageURL} alt={item.Name} />
+                          <div className="menu-item-details">
+                            <h3>{item.Name}</h3>
+                            <p>{item.Description}</p>
+                            <div className="price-key">
+                              <p>Price: ${item.Price}</p>
+                              <p>{item.Key}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="food-items-courses">
-                <div id="Drinks" className="food-items-courses-header">
-                  Drinks
-                </div>
-                <div className="food-items-courses-items">
-                  {Drinks.map((item, index) => (
-                    <Link
-                      className="food-link"
-                      to={`/ItemDetail/${item.id}`}
-                      key={index}
-                    >
-                      <div className="menu-item-card" key={index}>
-                        <img src={item.ImageURL} alt={item.Name} />
-                        <div className="menu-item-details">
-                          <h3>{item.Name}</h3>
-                          <p>{item.Description}</p>
-                          <div className="price-key">
-                            <p>Price: ${item.Price}</p>
-                            <p>{item.Key}</p>
+              )}
+              {Drinks.length > 0 && (
+                <div className="food-items-courses">
+                  <div id="Drinks" className="food-items-courses-header">
+                    Drinks
+                  </div>
+                  <div className="food-items-courses-items">
+                    {Drinks.map((item, index) => (
+                      <Link
+                        className="food-link"
+                        to={`/ItemDetail/${item.id}`}
+                        key={index}
+                      >
+                        <div className="menu-item-card" key={index}>
+                          <img src={item.ImageURL} alt={item.Name} />
+                          <div className="menu-item-details">
+                            <h3>{item.Name}</h3>
+                            <p>{item.Description}</p>
+                            <div className="price-key">
+                              <p>Price: ${item.Price}</p>
+                              <p>{item.Key}</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
