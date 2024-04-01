@@ -93,11 +93,12 @@
 
 .addon-content{
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .addon{
   padding-left: 40px;
+  margin-bottom: 10px;
 }
 .container2 {
   width: 100%;
@@ -200,15 +201,10 @@ textarea::placeholder {
   width: 60px; /* Set width and height to ensure the button is perfectly square */
   height: 60px;
   padding: 0; /* Remove padding to maintain square shape */
-  border-width: 3px;
+  border-width: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.buttonq:hover {
-  background-color: var(--main-color);
-  border-width: 8px;
 }
 
 .totalq {

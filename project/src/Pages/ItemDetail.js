@@ -14,6 +14,10 @@ import "../Style/ItemDetail.css";
 import { foodItems } from "../Data/FoodItems";
 import { addOns } from "../Data/FoodItems";
 import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faNoteSticky } from "@fortawesome/free-solid-svg-icons";
+import videoBG from "../Videos/Video6.mp4";
 
 function ItemDetailPage() {
   let { id } = useParams(); // Access the ID parameter from the URL
@@ -120,6 +124,7 @@ function ItemDetailPage() {
 
   return (
     <>
+      <video className="Video" src={videoBG} autoPlay muted loop playsInline />
       <div className="black-background">
         <div className="navbar">
           <React.Fragment>
@@ -223,6 +228,14 @@ function ItemDetailPage() {
                     value={comments} // Bind the value of the textarea to the 'comments' state
                     placeholder="Add special instructions..."
                     onChange={handleTextareaChange} // Call handleTextareaChange function on change
+                    style={{
+                      background: "transparent",
+                      color: "white",
+                      border: "none",
+                      borderBottom: "3px solid #B8860B",
+                      outline: "none", // Remove outline on focus
+                      resize: "none", // Prevent textarea from being resized
+                    }}
                   ></textarea>
                 </div>
               </div>
@@ -234,7 +247,9 @@ function ItemDetailPage() {
                   </div>
                   <div className="quantity-controls">
                     <button className="buttonq" onClick={decrement}>
-                      -
+                      {quantity > 1 && ( // Only render the minus button if quantity is greater than 1
+                        <div>-</div>
+                      )}
                     </button>
                     <span id="total" className="totalq">
                       {quantity}
@@ -256,14 +271,18 @@ function ItemDetailPage() {
                 <div>
                   {!addedToOrder && (
                     <button className="add-to-order" onClick={handleAddToOrder}>
-                      Add to Order
+                      <FontAwesomeIcon icon={faCheck} />
+                      &nbsp; Add to Order
                     </button>
                   )}
                 </div>
                 {addedToOrder && (
                   <div>
                     <Link to="/Order">
-                      <button className="go-to-order">Go to Order</button>
+                      <button className="go-to-order">
+                        <FontAwesomeIcon icon={faNoteSticky} />
+                        &nbsp;Go to Order
+                      </button>
                     </Link>
                   </div>
                 )}

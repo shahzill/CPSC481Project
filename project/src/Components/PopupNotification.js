@@ -1,24 +1,24 @@
-import "../Style/Navbar.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-
-import { useRef, useEffect } from 'react';
+import "../Style/Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { useRef, useEffect } from "react";
 
 function PopupNotification({ message, showPopup, closePopup }) {
-    const timerRef = useRef(null);
-    useEffect(() => {
-        if (showPopup) {
-            timerRef.current = setTimeout(() => {
-                closePopup();
-            }, 5000);
-        }
-        return () => {
-            clearTimeout(timerRef.current);
-        }
-    }, [showPopup]);
-    return (
-        <>
-            <style>{`
+  const timerRef = useRef(null);
+  useEffect(() => {
+    if (showPopup) {
+      timerRef.current = setTimeout(() => {
+        closePopup();
+      }, 5000);
+    }
+    return () => {
+      clearTimeout(timerRef.current);
+    };
+  }, [showPopup]);
+  return (
+    <>
+      <style>{`
             .popup {
                 position: fixed;
                 top: 10%;
@@ -41,6 +41,7 @@ function PopupNotification({ message, showPopup, closePopup }) {
             }
             .popupText {
                 width: 100%;
+                font-size: 20px;
             }
             .showPopup button {
                 background-color: transparent;
@@ -60,15 +61,14 @@ function PopupNotification({ message, showPopup, closePopup }) {
                 opacity: 0;
             }
         `}</style>
-            <div
-                className={'popup ' + (showPopup ? 'showPopup' : 'hidePopup')}>
-                <button onClick={closePopup}>
-                    <FontAwesomeIcon icon={faTimes} />
-                </button>
-                <div className='popupText'>{message.text}</div>
-            </div>
-        </>
-    )
+      <div className={"popup " + (showPopup ? "showPopup" : "hidePopup")}>
+        <button onClick={closePopup}>
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
+        <div className="popupText">{message.text}</div>
+      </div>
+    </>
+  );
 }
 
 export default PopupNotification;

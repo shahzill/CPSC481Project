@@ -6,6 +6,7 @@ import { foodItems } from "../Data/FoodItems";
 import { Link } from "react-router-dom";
 import { HashLink as ScrollLink } from "react-router-hash-link";
 import { animateScroll as scroll } from "react-scroll";
+import videoBG from "../Videos/Video6.mp4";
 
 function MenuPage() {
   // Find the specific food item
@@ -128,6 +129,7 @@ function MenuPage() {
 
   return (
     <>
+      <video className="Video" src={videoBG} autoPlay muted loop playsInline />
       <div className="black-background">
         <div className="navbar">
           <React.Fragment>
@@ -139,7 +141,17 @@ function MenuPage() {
             Search menu:&nbsp;&nbsp;
             <input
               type="text"
-              style={{ width: "200px", height: "40px", fontSize: "20px" }}
+              style={{
+                width: "200px",
+                height: "40px",
+                fontSize: "20px",
+                background: "transparent",
+                color: "white",
+                border: "none",
+                borderBottom: "1px solid #B8860B",
+                outline: "none", // Remove outline on focus
+                resize: "none", // Prevent textarea from being resized
+              }}
               className="search-menu-bar"
               value={searchValue}
               placeholder="Search..."
@@ -169,6 +181,7 @@ function MenuPage() {
                     className="font-size-link-course"
                     smooth
                     to="#Salad"
+                    activeClassName="active-link"
                   >
                     <li>Salads</li>
                   </ScrollLink>

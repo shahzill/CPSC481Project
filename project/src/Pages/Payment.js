@@ -12,7 +12,10 @@ import "../Style/Navbar.css";
 import "../Style/Payment.css";
 import "../Style/Navbar.css";
 import "../Style/Order.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCreditCard, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
+import videoBG from "../Videos/Video6.mp4";
 
 function PaymentPage() {
   const [orders, setOrders] = useState([]);
@@ -110,6 +113,7 @@ function PaymentPage() {
 
   return (
     <>
+      <video className="Video" src={videoBG} autoPlay muted loop playsInline />
       <div className="black-background">
         <div className="navbar">
           <React.Fragment>
@@ -168,14 +172,14 @@ function PaymentPage() {
                   ))}
                   <div className="OrderAndPrice">
                     <div className="OrderTotalPrice">
-                      Total: {eval(`order${index + 1}Total`)}
+                      Total: ${eval(`order${index + 1}Total`)}
                     </div>{" "}
                     {/* Accessing order total dynamically */}
                   </div>
                 </div>
               ))}
               <div className="OrderTotalPrice">
-                Overall total: {TotalOrderPrice}
+                Overall total: ${TotalOrderPrice}
               </div>
             </div>
             <div className="PaymentSide">
@@ -188,6 +192,16 @@ function PaymentPage() {
                     id="textBox"
                     value={tip}
                     onChange={handleTipAdd}
+                    style={{
+                      appearance: "none",
+                      background: "transparent",
+                      color: "white",
+                      border: "none",
+                      borderBottom: "3px solid #B8860B",
+                      outline: "none", // Remove outline on focus
+                      resize: "none", // Prevent textarea from being resized
+                      fontSize: "25px",
+                    }}
                   />{" "}
                   = ${TipTotal}
                 </div>
@@ -217,17 +231,26 @@ function PaymentPage() {
               <div className="Payment-options">
                 <div className="Payment-header">Payment options</div>
                 <div className="Payment-option-buttons">
-                  <button className="Tip-PercentageButton">Credit card</button>
-                  <button className="Tip-PercentageButton">Debit card</button>
-                  <button className="Tip-PercentageButton">Cash</button>
+                  <button className="payment-button">
+                    <FontAwesomeIcon icon={faCreditCard} />
+                    &nbsp;Credit
+                  </button>
+                  <button className="payment-button">
+                    <FontAwesomeIcon icon={faCreditCard} />
+                    &nbsp;Debit
+                  </button>
+                  <button className="payment-button">
+                    <FontAwesomeIcon icon={faMoneyBill} />
+                    &nbsp;Cash
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         )}
-        <div className="centered-content">
-          {orders.length === 0 && (
-            <div className="NoPayment">
+        {orders.length === 0 && (
+          <div className="centered-content">
+            <div className="text-container">
               <span>
                 Uh-oh! No payment pending. Remember to place an order first!
               </span>
@@ -236,8 +259,8 @@ function PaymentPage() {
                 Need a hand? Hit "Call for Assistance"!
               </span>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </>
   );

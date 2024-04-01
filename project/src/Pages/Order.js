@@ -18,7 +18,10 @@ import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "../Style/Navbar.css";
 import "../Style/Order.css";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
+import videoBG from "../Videos/Video6.mp4";
 
 function OrderPage() {
   const [orders, setOrders] = useState([]);
@@ -105,8 +108,9 @@ function OrderPage() {
         break;
       }
     }
-    setOrders(newOrders);
+    setOrders(newOrders.slice().reverse());
     setTotalOrderPrice(TotalPriceCalc.toFixed(2));
+    console.log("orders ", newOrders);
   }
 
   const ConfirmOrder = (orderArray) => {
@@ -232,6 +236,7 @@ function OrderPage() {
 
   return (
     <>
+      <video className="Video" src={videoBG} autoPlay muted loop playsInline />
       <div className="black-background">
         <div className="navbar">
           <React.Fragment>
@@ -273,7 +278,7 @@ function OrderPage() {
                             color: orderArray[0].OrderStatusTotal.includes(
                               "Order has been placed"
                             )
-                              ? "#7acda6"
+                              ? "#00FF00"
                               : "red",
                           }}
                         >
@@ -286,7 +291,7 @@ function OrderPage() {
                             color: orderArray[0].OrderStatusTotal.includes(
                               "Order has been confirmed"
                             )
-                              ? "#7acda6"
+                              ? "#00FF00"
                               : "red",
                           }}
                         >
@@ -299,7 +304,7 @@ function OrderPage() {
                             color: orderArray[0].OrderStatusTotal.includes(
                               "Order is being prepared"
                             )
-                              ? "#7acda6"
+                              ? "#00FF00"
                               : "red",
                           }}
                         >
@@ -312,7 +317,7 @@ function OrderPage() {
                             color: orderArray[0].OrderStatusTotal.includes(
                               "Order has been served"
                             )
-                              ? "#7acda6"
+                              ? "#00FF00"
                               : "red",
                           }}
                         >
@@ -397,7 +402,10 @@ function OrderPage() {
                             <Link
                               to={`/EditOrder/${order.OrderNumber}/${order.id}`}
                             >
-                              <button className="EditOrder">Edit</button>
+                              <button className="EditOrder">
+                                <FontAwesomeIcon icon={faPen} />
+                                &nbsp;Edit
+                              </button>
                             </Link>
                           )}
                       </div>
@@ -426,11 +434,12 @@ function OrderPage() {
                         className="ConfirmOrderButton"
                         onClick={() => ConfirmOrder(orderArray)}
                       >
-                        Confirm Order
+                        <FontAwesomeIcon icon={faCheck} />
+                        &nbsp;Confirm Order
                       </button>
                     )}
                     <div className="OrderTotalPrice">
-                      Total: {eval(`order${index + 1}Total`)}
+                      Total: ${eval(`order${index + 1}Total`)}
                     </div>{" "}
                     {/* Accessing order total dynamically */}
                   </div>
@@ -438,14 +447,14 @@ function OrderPage() {
               ))}
 
               <div className="OrderTotalPrice">
-                Overall total: {TotalOrderPrice}
+                Overall total: ${TotalOrderPrice}
               </div>
             </div>
           </div>
         )}
         {orders.length === 0 && (
           <div className="centered-content">
-            <div className="NoOrder">
+            <div className="text-container">
               <span>
                 No order yet! Your taste buds are still pondering. Give them a
                 nudge and let's create some delicious memories!

@@ -31,7 +31,7 @@
 }
 
 .link:hover {
-    color: #f4543c;
+    color: #B8860B;
     transform: scale(1.1); /* Make the button 10% larger on hover */
 }
 
@@ -50,4 +50,10 @@
 .dancingScript {
     font-family: 'Dancing Script', cursive;
     font-size: 30px;
+}
+
+.imageLink{
+    width: 200px;
+    height: 70px;
+    margin-left: 10px;
 }

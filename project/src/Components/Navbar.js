@@ -4,6 +4,9 @@ import { HashLink as Link } from "react-router-hash-link";
 import "../Style/Navbar.css";
 import PopupNotification from "../Components/PopupNotification";
 import { useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
+import logo from "../Images/BG1.png";
 
 function Navbar() {
   const navRef = useRef();
@@ -43,13 +46,8 @@ function Navbar() {
 
   return (
     <header className="header">
-      <Link
-        className="link dancingScript"
-        smooth
-        to="/#"
-        style={{ marginLeft: "10px" }}
-      >
-        Culinary Canvas
+      <Link className="imageLink" smooth to="/#">
+        <img className="imageLink" src={logo} alt="logo" />
       </Link>
 
       <nav ref={navRef}>
@@ -93,7 +91,8 @@ function Navbar() {
         className="CallForAssistance"
         onClick={() => handleAssistanceRequest()}
       >
-        Call for assistance
+        <FontAwesomeIcon icon={faBell} />
+        &nbsp; Call for assistance
       </button>
       <PopupNotification
         message={confirmationMsg}
