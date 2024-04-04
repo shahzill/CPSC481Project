@@ -82,7 +82,13 @@ function Navbar() {
           >
             Payment
           </Link>
-          <Link className="link" smooth to="">
+          <Link
+            className={`link ${
+              location.pathname === "/AboutUs" ? "active" : ""
+            }`}
+            smooth
+            to="/AboutUs"
+          >
             About us
           </Link>
         </div>

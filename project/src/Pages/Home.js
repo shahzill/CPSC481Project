@@ -20,7 +20,7 @@ function HomePage() {
           <Link to="/Menu">
             <button className="browse-menu-button">Browse Menu</button>
           </Link>
-          <Link to="/">
+          <Link to="/AboutUs">
             <button className="about-us-button">About Us</button>
           </Link>
         </div>

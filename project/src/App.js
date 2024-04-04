@@ -7,6 +7,7 @@ import OrderPage from "./Pages/Order";
 import ItemDetailPage from "./Pages/ItemDetail";
 import PaymentPage from "./Pages/Payment";
 import EditOrderPage from "./Pages/EditOrder";
+import AboutUsPage from "./Pages/AboutUs";
 import PopupNotification from "./Components/PopupNotification";
 
 function App() {
@@ -71,6 +72,7 @@ function App() {
           <Route path="/ItemDetail/:id" element={<ItemDetailPage />} />
           <Route path="/Order" element={<OrderPage />} />
           <Route path="/Payment" element={<PaymentPage />} />
+          <Route path="/AboutUs" element={<AboutUsPage />} />
           <Route
             path="/EditOrder/:OrderId/:ItemId"
             element={<EditOrderPage />}

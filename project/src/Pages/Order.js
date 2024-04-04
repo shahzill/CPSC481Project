@@ -255,7 +255,7 @@ function OrderPage() {
         />
         {showConfirmation && (
           <ConfirmationPopup
-            message="Are you sure you want to confirm this order?"
+            message="Ready to send your order off to the kitchen for some culinary wizardry?"
             onConfirm={handleConfirm}
             onCancel={handleCancel}
           />

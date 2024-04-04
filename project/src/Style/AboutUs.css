@@ -1,0 +1,16 @@
+.top-50{
+    height: 40vh;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.About-us{
+    width: 50%;
+    padding: 40px;
+    font-size: 20px;
+}
+
+.logo-pic{
+    margin-top: 100px;
+}

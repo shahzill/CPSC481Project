@@ -89,7 +89,7 @@ margin-top: 5px; /* Add some space between icon and description */
 }
 .button-quantity-change {
     font-family: "Titillium Web", sans-serif;
-    background-color: transparent;
+    background-color: var(--button-color);
     color: white;
     border-style: solid;
     border-radius: 100%;
@@ -119,6 +119,7 @@ margin-top: 5px; /* Add some space between icon and description */
 }
 .quantity-controls-order-page {
     display: flex;
+    gap: 20px;
 }
 
 .Customizations-header, .Comments-header {

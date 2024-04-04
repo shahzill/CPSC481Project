@@ -3,7 +3,7 @@ import "../Style/ConfirmationPopup.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const ConfirmationPopup = ({ message, onConfirm, onCancel }) => {
+const PaymentPopup = ({ message, onConfirm, onCancel }) => {
   const [confirmed, setConfirmed] = useState(false);
 
   const handleConfirm = () => {
@@ -20,18 +20,19 @@ const ConfirmationPopup = ({ message, onConfirm, onCancel }) => {
     <>
       <div className="overlay"></div>
       <div className="confirmation-popup">
-        <p>{message}</p>
+        <h3>Payment in progress</h3>
+        <h5>{message}</h5>
         <button onClick={handleConfirm}>
           <FontAwesomeIcon icon={faCheck} />
-          &nbsp;Yes
+          &nbsp;(Simulate payment completion)
         </button>
         <button onClick={handleCancel}>
           <FontAwesomeIcon icon={faX} />
-          &nbsp;No
+          &nbsp;Cancel
         </button>
       </div>
     </>
   );
 };
 
-export default ConfirmationPopup;
+export default PaymentPopup;

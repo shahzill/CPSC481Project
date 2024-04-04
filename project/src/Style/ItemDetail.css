@@ -192,7 +192,7 @@ textarea::placeholder {
 
 .buttonq {
   font-family: "Titillium Web", sans-serif;
-  background-color: transparent;
+  background-color: var(--button-color);
   color: white;
   border-style: solid;
   border-radius: 100%;

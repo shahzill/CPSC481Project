@@ -14,10 +14,24 @@
 
 .confirmation-popup p {
   margin-bottom: 15px;
+  color: var(--main-color);
+}
+
+.confirmation-popup h3 {
+  margin-bottom: 15px;
+  color: var(--main-color);
+  margin-bottom: 100px;
+}
+.confirmation-popup h5 {
+  margin-bottom: 15px;
+  color: var(--main-color);
+  margin-bottom: 100px;
+  text-align: center;
 }
 
 .confirmation-popup button {
-  margin-right: 10px;
+  margin-right: 40px;
+  margin-top: 20px;
   padding: 8px 16px;
   border: none;
   border-radius: 5px;
@@ -25,6 +39,7 @@
   background-color: var(--button-color);
   color: white;
   font-size: 25px;
+
 }
 
 .confirmation-popup button:hover {
