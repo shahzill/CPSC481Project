@@ -9,6 +9,7 @@ import PaymentPage from "./Pages/Payment";
 import EditOrderPage from "./Pages/EditOrder";
 import AboutUsPage from "./Pages/AboutUs";
 import PopupNotification from "./Components/PopupNotification";
+import AnimatedRoutes from "./Components/AnimatedRoutes";
 
 function App() {
   const [popupMessage, setPopupMessage] = useState({
@@ -66,18 +67,7 @@ function App() {
         closePopup={closePopup}
       />
       <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/Menu" element={<MenuPage />} />
-          <Route path="/ItemDetail/:id" element={<ItemDetailPage />} />
-          <Route path="/Order" element={<OrderPage />} />
-          <Route path="/Payment" element={<PaymentPage />} />
-          <Route path="/AboutUs" element={<AboutUsPage />} />
-          <Route
-            path="/EditOrder/:OrderId/:ItemId"
-            element={<EditOrderPage />}
-          />
-        </Routes>
+        <AnimatedRoutes />
       </Router>
     </>
   );

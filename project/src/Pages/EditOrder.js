@@ -18,6 +18,7 @@ import videoBG from "../Videos/Video6.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faNoteSticky } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 function EditOrderPage() {
   let { OrderId } = useParams(); // Access the ID parameter from the URL
@@ -169,10 +170,13 @@ function EditOrderPage() {
   return (
     <>
       <video className="Video" src={videoBG} autoPlay muted loop playsInline />
-      <div className="black-background">
-        <div className="navbar">
-          <Navbar />
-        </div>
+      <motion.div
+        initial={{ opacity: 0, height: "100vh" }}
+        animate={{ opacity: 1, height: "90vh" }}
+        exit={{ opacity: 0, height: "100vh" }}
+        transition={{ duration: 0.5 }}
+        className="black-background"
+      >
         <PopupNotification
           message={confirmationMsg}
           showPopup={showPopup}
@@ -339,7 +343,7 @@ function EditOrderPage() {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
     </>
   );
 }

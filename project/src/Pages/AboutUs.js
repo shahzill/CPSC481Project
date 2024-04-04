@@ -11,15 +11,18 @@ import Navbar from "../Components/Navbar";
 import videoBG from "../Videos/Video6.mp4";
 import "../Style/AboutUs.css";
 import logo from "../Images/BG1.png";
+import { motion } from "framer-motion";
 
 function AboutUs() {
   return (
     <>
       <video className="Video" src={videoBG} autoPlay muted loop playsInline />
-      <div className="black-background">
-        <div className="navbar">
-          <Navbar />
-        </div>
+      <motion.div
+        initial={{ opacity: 0, height: "100vh" }}
+        animate={{ opacity: 1, height: "85vh" }}
+        exit={{ opacity: 0, height: "100vh" }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="top-50">
           <div className="About-us">
             <span>
@@ -69,7 +72,7 @@ function AboutUs() {
             <img src={logo} alt="Logo" />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

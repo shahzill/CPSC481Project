@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { HashLink as ScrollLink } from "react-router-hash-link";
 import { animateScroll as scroll } from "react-scroll";
 import videoBG from "../Videos/Video6.mp4";
+import { motion } from "framer-motion";
 
 function MenuPage() {
   // Find the specific food item
@@ -130,12 +131,13 @@ function MenuPage() {
   return (
     <>
       <video className="Video" src={videoBG} autoPlay muted loop playsInline />
-      <div className="black-background">
-        <div className="navbar">
-          <React.Fragment>
-            <Navbar />
-          </React.Fragment>
-        </div>
+
+      <motion.div
+        initial={{ opacity: 0, height: "100vh" }}
+        animate={{ opacity: 1, height: "85vh" }}
+        exit={{ opacity: 0, height: "100vh" }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="contentMenuPage">
           <div className="search-bar">
             Search menu:&nbsp;&nbsp;
@@ -461,7 +463,7 @@ function MenuPage() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

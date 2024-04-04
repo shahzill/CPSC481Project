@@ -17,6 +17,7 @@ import { faCreditCard, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
 import videoBG from "../Videos/Video6.mp4";
 import PaymentPopup from "../Components/PaymentPopup";
+import { motion } from "framer-motion";
 
 function PaymentPage() {
   const [orders, setOrders] = useState([]);
@@ -135,12 +136,13 @@ function PaymentPage() {
   return (
     <>
       <video className="Video" src={videoBG} autoPlay muted loop playsInline />
-      <div className="black-background">
-        <div className="navbar">
-          <React.Fragment>
-            <Navbar />
-          </React.Fragment>
-        </div>
+      <motion.div
+        initial={{ opacity: 0, height: "100vh" }}
+        animate={{ opacity: 1, height: "90vh" }}
+        exit={{ opacity: 0, height: "100vh" }}
+        transition={{ duration: 0.5 }}
+        className="black-background"
+      >
         {showPaymentPopup && (
           <PaymentPopup
             message="Please follow the instructions on the terminal."
@@ -301,7 +303,7 @@ function PaymentPage() {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
     </>
   );
 }

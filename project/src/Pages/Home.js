@@ -5,17 +5,18 @@ import "../Style/Navbar.css";
 import "../Style/Home.css";
 import videoBG from "../Videos/HomePageVideo.mp4";
 
+import { motion } from "framer-motion";
+
 function HomePage() {
   return (
     <>
       <video className="Video" src={videoBG} autoPlay muted loop playsInline />
-
-      <div className="navbar">
-        <React.Fragment>
-          <Navbar />
-        </React.Fragment>
-      </div>
-      <div className="contentHome">
+      <motion.div
+        initial={{ opacity: 0, height: "100vh" }}
+        animate={{ opacity: 1, height: "85vh" }}
+        exit={{ opacity: 0, height: "100vh" }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="center-buttons">
           <Link to="/Menu">
             <button className="browse-menu-button">Browse Menu</button>
@@ -24,7 +25,7 @@ function HomePage() {
             <button className="about-us-button">About Us</button>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

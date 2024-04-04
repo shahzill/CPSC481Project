@@ -18,6 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faNoteSticky } from "@fortawesome/free-solid-svg-icons";
 import videoBG from "../Videos/Video6.mp4";
+import { motion } from "framer-motion";
 
 function ItemDetailPage() {
   let { id } = useParams(); // Access the ID parameter from the URL
@@ -125,12 +126,13 @@ function ItemDetailPage() {
   return (
     <>
       <video className="Video" src={videoBG} autoPlay muted loop playsInline />
-      <div className="black-background">
-        <div className="navbar">
-          <React.Fragment>
-            <Navbar />
-          </React.Fragment>
-        </div>
+      <motion.div
+        initial={{ opacity: 0, height: "100vh" }}
+        animate={{ opacity: 1, height: "90vh" }}
+        exit={{ opacity: 0, height: "100vh" }}
+        transition={{ duration: 0.5 }}
+        className="black-background"
+      >
         <PopupNotification
           message={confirmationMsg}
           showPopup={showPopup}
@@ -290,7 +292,7 @@ function ItemDetailPage() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
