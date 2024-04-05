@@ -5,6 +5,7 @@
 
 1. Navigate to the Project directory
 2. Use the command "npm run start"
+3. Press F12 to open dev tools and set the dimensions to 2100(width) x 1100(height) for best experience
 
 
 ### Structure of the Project
@@ -16,3 +17,9 @@
 4. Pages (pages such as home, menu etc)
 5. Style (css style sheets for all the pages)
 6. Videos (videos for the project)
+
+
+### Note: 
+
+
+Everything is stored in the memory so refreshing any page will reset the app
