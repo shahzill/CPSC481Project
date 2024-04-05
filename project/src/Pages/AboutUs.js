@@ -19,7 +19,7 @@ function AboutUs() {
       <video className="Video" src={videoBG} autoPlay muted loop playsInline />
       <motion.div
         initial={{ opacity: 0, height: "100vh" }}
-        animate={{ opacity: 1, height: "85vh" }}
+        animate={{ opacity: 1, height: "80vh" }}
         exit={{ opacity: 0, height: "100vh" }}
         transition={{ duration: 0.5 }}
       >

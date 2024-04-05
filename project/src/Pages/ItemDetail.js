@@ -248,11 +248,17 @@ function ItemDetailPage() {
                     <b> Quantity</b>
                   </div>
                   <div className="quantity-controls">
-                    <button className="buttonq" onClick={decrement}>
-                      {quantity > 1 && ( // Only render the minus button if quantity is greater than 1
+                    {quantity > 1 && ( // Only render the minus button if quantity is greater than 1
+                      <button className="buttonq" onClick={decrement}>
                         <div>-</div>
-                      )}
-                    </button>
+                      </button>
+                    )}
+                    {quantity <= 1 && ( // Only render the minus button if quantity is greater than 1
+                      <button className="buttonq-nocolor">
+                        <div></div>
+                      </button>
+                    )}
+
                     <span id="total" className="totalq">
                       {quantity}
                     </span>

@@ -74,9 +74,10 @@ function EditOrderPage() {
     setQuantity(orderRetrievedFinal.ItemTotalQuantity);
     setPrice(orderRetrievedFinal.ItemTotalPrice);
     // Update sidesToAdd based on initial values
-    const initialSides = orderRetrievedFinal.ItemCustomizations.split(",");
-    setSidesToAdd(initialSides);
-
+    if (orderRetrievedFinal.ItemCustomizations != "") {
+      const initialSides = orderRetrievedFinal.ItemCustomizations.split(",");
+      setSidesToAdd(initialSides);
+    }
     setIsLoading(false);
   }, []);
   const handleAddToOrder = () => {
@@ -105,7 +106,6 @@ function EditOrderPage() {
 
   function handleCheckboxChange(event) {
     const { checked, value } = event.target;
-    console.log("NOW IT SHOULD BE ", checked);
     // Update sidesToAdd based on the checkbox state
     if (checked) {
       // If the checkbox is checked, add its value to sidesToAdd
@@ -116,23 +116,14 @@ function EditOrderPage() {
         prevSides.filter((side) => side.trim() !== value.trim())
       );
     }
-    console.log("1 ", sidesToAdd);
   }
   useEffect(() => {
     // Log sidesToAdd whenever it changes
-    console.log("sidesToAdd changed:", sidesToAdd);
   }, [sidesToAdd]);
   const checkForSides = (addonName) => {
-    console.log("2 ", sidesToAdd);
     const lowerCaseAddonName = addonName.toLowerCase().trim(); // Convert the addon name to lowercase
     const itemCustomizationsArray = sidesToAdd.map((side) =>
       side.toLowerCase().trim()
-    );
-    console.log(
-      "returning ",
-      itemCustomizationsArray.includes(lowerCaseAddonName),
-      " for ",
-      addonName
     );
     return itemCustomizationsArray.includes(lowerCaseAddonName); // Check if the lowercase addonName is included in the array
   };

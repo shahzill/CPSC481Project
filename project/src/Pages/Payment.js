@@ -67,8 +67,8 @@ function PaymentPage() {
 
       // Calculate total price for valid items
       validItems.forEach((order) => {
-        totalOrderPrice += parseFloat(order.ItemPrice);
-        TotalPriceCalc += parseFloat(order.ItemPrice);
+        totalOrderPrice += parseFloat(order.ItemTotalPrice);
+        TotalPriceCalc += parseFloat(order.ItemTotalPrice);
       });
 
       // Set total order price using the appropriate state setter from orderTotalSetters array

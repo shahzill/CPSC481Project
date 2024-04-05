@@ -441,7 +441,7 @@ function OrderPage() {
                       </button>
                     )}
                     <div className="OrderTotalPrice">
-                      Total: ${eval(`order${index + 1}Total`)}
+                      Total: ${eval(`order${orders.length - index}Total`)}
                     </div>{" "}
                     {/* Accessing order total dynamically */}
                   </div>

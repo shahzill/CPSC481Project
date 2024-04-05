@@ -206,6 +206,22 @@ textarea::placeholder {
   justify-content: center;
   align-items: center;
 }
+.buttonq-nocolor {
+  font-family: "Titillium Web", sans-serif;
+  background-color: transparent;
+  color: white;
+  border-style: solid;
+  border-radius: 100%;
+  margin: 7px;
+  font-size: 35px;
+  width: 60px; /* Set width and height to ensure the button is perfectly square */
+  height: 60px;
+  padding: 0; /* Remove padding to maintain square shape */
+  border-width: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .totalq {
   font-size: 35px;
