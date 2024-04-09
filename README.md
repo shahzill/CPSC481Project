@@ -1,4 +1,17 @@
-# CPSC481Project
+# CPSC481Project - Culinary Canvas
+
+###  Members
+Ahmed Raizan - raizan.ahmed@ucalgary.ca
+
+
+Christopher Lee - leeca@ucalgary.ca
+
+
+Shahzill Naveed - shahzill.naveed@ucalgary.ca
+
+
+Tim Lerman - timofei.lerman@ucalgary.ca
+
 
 ### To Run the Project
 
@@ -23,3 +36,5 @@
 
 
 Everything is stored in the memory so refreshing any page will reset the app
+
+Run the app on 2100 x 1100 for the best experience
