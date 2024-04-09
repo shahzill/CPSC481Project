@@ -18,6 +18,7 @@ import { Order1, Order2, Order3, Order4, Order5 } from "../Data/Orders";
 import videoBG from "../Videos/Video6.mp4";
 import PaymentPopup from "../Components/PaymentPopup";
 import { motion } from "framer-motion";
+import PopupNotification from "../Components/PopupNotification";
 
 function PaymentPage() {
   const [orders, setOrders] = useState([]);
@@ -34,7 +35,15 @@ function PaymentPage() {
   const [TipTotal, setTipTotal] = useState(0);
   const [showPaymentPopup, setShowPaymentPopup] = useState(false);
   const [paymentCompleted, setPaymentCompleted] = useState(false);
+  const [cashPaymentPopup, setCashPaymentPopup] = useState(false);
 
+  const confirmationMsg = {
+    text: "A team member will be with you to complete the transaction.",
+    theme: {
+      backgroundColor: "green",
+      color: "white",
+    },
+  };
   useEffect(() => {
     const orderArrays = [Order1, Order2, Order3, Order4, Order5];
     let foundOrder = false;
@@ -129,6 +138,14 @@ function PaymentPage() {
     }, 100); // 20 seconds
   };
 
+  const closePopup = () => {};
+
+  function cashPayment() {
+    // Show notification
+    setCashPaymentPopup(true);
+    // You can also perform other actions here, such as sending a request to a server
+  }
+
   const handlePayment = () => {
     setShowPaymentPopup(true); // Close the confirmation popup if cancelled
   };
@@ -150,6 +167,11 @@ function PaymentPage() {
             onCancel={handleCancel}
           />
         )}
+        <PopupNotification
+          message={confirmationMsg}
+          showPopup={cashPaymentPopup}
+          closePopup={closePopup}
+        />
         {orders.length > 0 && paymentCompleted == false && (
           <div className="contentPaymentPage">
             <div className="OrderSummarySide">
@@ -269,7 +291,7 @@ function PaymentPage() {
                     <FontAwesomeIcon icon={faCreditCard} />
                     &nbsp;Debit
                   </button>
-                  <button className="payment-button">
+                  <button className="payment-button" onClick={cashPayment}>
                     <FontAwesomeIcon icon={faMoneyBill} />
                     &nbsp;Cash
                   </button>
